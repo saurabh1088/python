@@ -13,8 +13,13 @@
 # Data persistence with JSON.
 # Simple report generation based on expense categories.
 
+import expense
+
 def main():
     print("This is entry point for expense tracker app")
+    expenseTracker = expense.Expense(databaseFileName='expenses.json')
+    expenseTracker.load_expenses_from_json_database()
 
 if __name__ == '__main__':
     main()
+
