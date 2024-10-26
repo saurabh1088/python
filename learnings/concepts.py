@@ -1,14 +1,25 @@
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler("debug.log"),
+        logging.StreamHandler()
+    ]
+)
+
 # Simple class with no properties
 class SampleClassDeclaration:
 
     def __init__(self):
-        print("Initialising class SampleClassDeclaration...")
+        logging.info('Initialising class SampleClassDeclaration...')
         pass
 
 class SampleClassWithInstanceProperties:
 
     def __init__(self, property):
-        print("Initialising class SampleClassWithInstanceProperties...")
+        logging.info('Initialising class SampleClassWithInstanceProperties...')
         self.property = property
 
     def __str__(self):
@@ -23,34 +34,34 @@ class SampleClassWithTypeProperties:
 
 def example_dynamic_typing_in_python():
     x = 10
-    print(f"x is {x} and type of x is {type(x)}")
+    logging.info(f"x is {x} and type of x is {type(x)}")
     
     x = 1.5
-    print(f"x is {x} and type of x is {type(x)}")
+    logging.info(f"x is {x} and type of x is {type(x)}")
 
     x = "string"
-    print(f"x is {x} and type of x is {type(x)}")
+    logging.info(f"x is {x} and type of x is {type(x)}")
 
 def example_create_object_for_sample_class_with_instance_properties():
     objectOne = SampleClassWithInstanceProperties(property="string")
     objectTwo = SampleClassWithInstanceProperties(property=100)
-    print(objectOne)
-    print(objectTwo)
+    logging.info(objectOne)
+    logging.info(objectTwo)
 
 def example_create_object_for_sample_class_with_type_properties():
     objectOne = SampleClassWithTypeProperties()
     objectTwo = SampleClassWithTypeProperties()
     objectThree = SampleClassWithTypeProperties()
 
-    print("Initial value for type property across multiple instances")
-    print(f"Object 1 : {objectOne.typeProperty}")
-    print(f"Object 2 : {objectOne.typeProperty}")
-    print(f"Object 3 : {objectOne.typeProperty}")
+    logging.info("Initial value for type property across multiple instances")
+    logging.info(f"Object 1 : {objectOne.typeProperty}")
+    logging.info(f"Object 2 : {objectOne.typeProperty}")
+    logging.info(f"Object 3 : {objectOne.typeProperty}")
 
-    print("Updating type property value using objectOne...")
-    print("Update finished, printing values again...")
+    logging.info("Updating type property value using objectOne...")
+    logging.info("Update finished, printing values again...")
     objectOne.typeProperty = "updated_type_proprty_value"
 
-    print(f"Object 1 : {objectOne.typeProperty}")
-    print(f"Object 2 : {objectOne.typeProperty}")
-    print(f"Object 3 : {objectOne.typeProperty}")
+    logging.info(f"Object 1 : {objectOne.typeProperty}")
+    logging.info(f"Object 2 : {objectOne.typeProperty}")
+    logging.info(f"Object 3 : {objectOne.typeProperty}")

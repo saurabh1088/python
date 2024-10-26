@@ -1,24 +1,35 @@
 import os
 import json
 import pathlib
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler("debug.log"),
+        logging.StreamHandler()
+    ]
+)
 
 class Expense:
 
     def __init__(self, databaseFileName):
-        print('Initialising class Expense...')
+        logging.info('Initialising class Expense...')
         self.databaseFileName = databaseFileName
         self.expenses = []
 
     def load_expenses_from_json_database(self):
-        print('Loading expenses from json database file expenses.json')
+        logging.info('Loading expenses from json database file expenses.json')
         filepath = pathlib.Path.cwd() / self.databaseFileName
+        logging.info(f'Calculated filepath for file {self.databaseFileName} : {filepath}')
         if os.path.exists(filepath):
-            print('Found file expenses.json')
+            logging.info('Found file expenses.json')
             with open(self.databaseFileName, 'r') as file:
                 self.expenses = json.load(file)
-                print('Successfully read contents for expenses.json')
-                print(f'{self.expenses}')
+                logging.info('Successfully read contents for expenses.json')
+                logging.info(f'{self.expenses}')
         else:
-            print('Not able to find file expenses.json')
+            logging.error('Not able to find file expenses.json')
             self.expenses = []
 

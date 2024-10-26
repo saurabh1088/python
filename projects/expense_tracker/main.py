@@ -14,9 +14,19 @@
 # Simple report generation based on expense categories.
 
 import expense
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler("debug.log"),
+        logging.StreamHandler()
+    ]
+)
 
 def main():
-    print("This is entry point for expense tracker app")
+    logging.info('Arrived at entry point for expense tracker app')
     expenseTracker = expense.Expense(databaseFileName='expenses.json')
     expenseTracker.load_expenses_from_json_database()
 
