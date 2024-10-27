@@ -30,6 +30,37 @@ def main():
     expenseTracker = expense.Expense(databaseFileName='expenses.json')
     expenseTracker.load_expenses_from_json_database()
 
+    while True:
+        print('***********************************************************')
+        print('Welcome to Expense tracker')
+        print("\nExpense Tracker Options:")
+        print("1. Add Expense")
+        print("2. View Expenses")
+        print("3. Delete Expense")
+        print("4. Edit Expense")
+        print("5. Generate Report")
+        print("6. Exit")
+
+        choice = input('Choose a suitable option from 1 to 6:')
+
+        if choice == '1':
+            logging.info('Selected option 1 : Add Expense')
+            expenseTracker.add_new_expense(type='personal', amount='100.00')
+        elif choice == '2':
+            logging.info('Selected option 2 : View Expenses')
+            expenseTracker.display_all_current_expenses()
+        elif choice == '3':
+            logging.info('Selected option 3 : Delete Expense')
+        elif choice == '4':
+            logging.info('Selected option 4 : Edit Expense')
+        elif choice == '5':
+            logging.info('Selected option 5 : Generate Report')
+        elif choice == '6':
+            logging.info('Selected option 6 : Exit')
+            break
+        else:
+            logging.info('Invalid option : Please select a valid option from 1 to 6')
+
 if __name__ == '__main__':
     main()
 
