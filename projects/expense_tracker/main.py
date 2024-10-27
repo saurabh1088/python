@@ -51,6 +51,8 @@ def main():
             expenseTracker.display_all_current_expenses()
         elif choice == '3':
             logging.info('Selected option 3 : Delete Expense')
+            expenseId = input('Enter ID of expense to delete: ')
+            expenseTracker.delete_expense_from_json_database(expenseId=expenseId)
         elif choice == '4':
             logging.info('Selected option 4 : Edit Expense')
         elif choice == '5':

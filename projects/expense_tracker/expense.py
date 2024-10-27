@@ -35,6 +35,12 @@ class Expense:
             logging.error('Not able to find file expenses.json')
             self.expenses = []
 
+
+    def delete_expense_from_json_database(self, expenseId):
+        logging.info(f'Deleting expenses with ID : {expenseId} from json database file expenses.json')
+        self.expenses = [expense for expense in self.expenses if expense["id"] != expenseId]
+        self.save_expenses_to_json_database()
+        
     
     def display_all_current_expenses(self):
         if not self.expenses:
