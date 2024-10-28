@@ -45,7 +45,10 @@ def main():
 
         if choice == '1':
             logging.info('Selected option 1 : Add Expense')
-            expenseTracker.add_new_expense(type='personal', amount='100.00')
+            typeOfExpense = input('Enter type of expense to add: ')
+            amountOfExpense = input('Enter expense amount: ')
+            expenseDescription = input('Enter a suitable description for expense: ')
+            expenseTracker.add_new_expense(type=typeOfExpense, amount=amountOfExpense, description=expenseDescription)
         elif choice == '2':
             logging.info('Selected option 2 : View Expenses')
             expenseTracker.display_all_current_expenses()
@@ -55,8 +58,14 @@ def main():
             expenseTracker.delete_expense_from_json_database(expenseId=expenseId)
         elif choice == '4':
             logging.info('Selected option 4 : Edit Expense')
+            expenseId = input('Enter ID of expense to edit: ')
+            typeOfExpense = input('Enter type of expense: ')
+            amountOfExpense = input('Enter expense amount: ')
+            expenseDescription = input('Enter a suitable description for expense: ')
+            expenseTracker.edit_expense_details(expenseId=expenseId, type=typeOfExpense, amount=amountOfExpense, description=expenseDescription)
         elif choice == '5':
             logging.info('Selected option 5 : Generate Report')
+            expenseTracker.generate_expense_report()
         elif choice == '6':
             logging.info('Selected option 6 : Exit')
             break

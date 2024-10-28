@@ -1,8 +1,23 @@
 [
     {
-        "id": "eaed32d4-9477-11ef-b97d-b25786dc71c6",
-        "type": "personal",
-        "amount": "100.00",
-        "date": "10/27/2024, 20:57:03"
+        "id": "de35942c-9518-11ef-ad06-b25786dc71c6",
+        "type": "Leisure",
+        "amount": "29856.50",
+        "date": "10/28/2024, 16:09:11",
+        "description": "This was a vacation to Hawai island"
+    },
+    {
+        "id": "b4cd5da8-9532-11ef-b11c-b25786dc71c5",
+        "type": "Commute",
+        "amount": "264.99",
+        "date": "10/28/2024, 19:14:08",
+        "description": "Travel to office."
+    },
+    {
+        "id": "c5d0d01c-9532-11ef-b11c-b25786dc71c5",
+        "type": "Commute",
+        "amount": "367.89",
+        "date": "10/28/2024, 19:14:37",
+        "description": "Commute back to home from office."
     }
 ]

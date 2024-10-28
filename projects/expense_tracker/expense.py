@@ -40,22 +40,28 @@ class Expense:
         logging.info(f'Deleting expenses with ID : {expenseId} from json database file expenses.json')
         self.expenses = [expense for expense in self.expenses if expense["id"] != expenseId]
         self.save_expenses_to_json_database()
-        
+
     
     def display_all_current_expenses(self):
         if not self.expenses:
             logging.info('There are currently no expense added')
         else:
-            logging.info(f"\nValue : {self.expenses}")
+            for expense in self.expenses:
+                logging.info(f"\ID : {expense['id']}")
+                logging.info(f"\Type : {expense['type']}")
+                logging.info(f"\Amount : {expense['amount']}")
+                logging.info(f"\Date : {expense['date']}")
+                logging.info(f"\Description : {expense['description']}")
                 
 
-    def add_new_expense(self, type, amount):
+    def add_new_expense(self, type, amount, description):
         logging.info(f'Adding new expense of type : {type} with amount : {amount}')
         newExpense = {
             "id": str(uuid.uuid1()),
             "type": type,
             "amount": amount,
-            "date": datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S")
+            "date": datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S"),
+            "description": description
         }
         logging.info(f'Created new expense : {newExpense}')
         self.expenses.append(newExpense)
@@ -73,3 +79,26 @@ class Expense:
                 logging.info('Successfully saved expenses to expenses.json')
         else:
             logging.error('Not able to find file expenses.json')
+
+    
+    def edit_expense_details(self, expenseId, type=None, amount=None, description=None):
+        logging.info(f'Editing details of expense with ID : {expenseId}')
+        for expense in self.expenses:
+            if expense['id'] == expenseId:
+                if type is not None:
+                    expense['type'] = type
+                if amount is not None:
+                    expense['amount'] = amount
+                if description is not None:
+                    expense['description'] = description
+                self.save_expenses_to_json_database()
+                return
+            
+
+    def generate_expense_report(self):
+        report = {}
+        for expense in self.expenses:
+            type = expense['type']
+            report[type] = report.get(type, 0) + float(expense['amount'])
+        for type, expense in report.items():
+            logging.info(f'Type : {type}, Expense : {expense}')
