@@ -99,5 +99,7 @@ def example_using_singleton_created_with_init():
     instanceTwo = SingletonUsingInit.sharedInstance()
     if instanceOne is instanceTwo:
         logging.info('instanceOne and instanceTwo are same')
+        logging.info(f'Unique ID for instanceOne : {id(instanceOne)}')
+        logging.info(f'Unique ID for instanceTwo : {id(instanceTwo)}')
     else:
         logging.info('instanceOne and instanceTwo are different')
