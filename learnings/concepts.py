@@ -57,6 +57,10 @@ class SingletonUsingInit:
             SingletonUsingInit.__instance = self
 
 
+def example_initialise_sample_class():
+    object = SampleClassDeclaration()
+    
+
 def example_dynamic_typing_in_python():
     x = 10
     logging.info(f"x is {x} and type of x is {type(x)}")

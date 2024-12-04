@@ -13,7 +13,7 @@ logging.basicConfig(
 def main():
     logging.info('This is entry point')
     concepts.example_dynamic_typing_in_python()
-    object = concepts.SampleClassDeclaration()
+    concepts.example_initialise_sample_class()
     concepts.example_create_object_for_sample_class_with_instance_properties()
     concepts.example_create_object_for_sample_class_with_type_properties()
     concepts.example_using_singleton_created_with_init()
