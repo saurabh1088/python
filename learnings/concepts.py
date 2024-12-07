@@ -1,5 +1,6 @@
 import logging
 import sys
+import weakref
 
 
 logging.basicConfig(
@@ -119,5 +120,22 @@ def example_reference_counting():
     objectTwo = objectOne
     logging.info(f'Reference count for objectOne : {sys.getrefcount(objectOne)}')
     logging.info(f'Reference count for objectTwo : {sys.getrefcount(objectTwo)}')
+
+
+def example_object_reference_removal_using_del():
+    objectOne = SampleClassWithInstanceProperties(property="string")
+    objectTwo = objectOne
+    logging.info(f'Reference count for objectOne : {sys.getrefcount(objectOne)}')
+    logging.info(f'Reference count for objectTwo : {sys.getrefcount(objectTwo)}')
+    
+    # Delete the original reference for objectTwo
+    del objectTwo
+
+    # Reference count for objectOne will be reduced now
+    logging.info(f'Reference count for objectOne : {sys.getrefcount(objectOne)}')
+    
+    # Calling below will now cause an exception
+    # logging.info(f'Reference count for objectTwo : {sys.getrefcount(objectTwo)}')
+        
 
     
