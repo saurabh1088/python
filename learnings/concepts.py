@@ -1,4 +1,5 @@
 import logging
+import sys
 
 
 logging.basicConfig(
@@ -107,3 +108,16 @@ def example_using_singleton_created_with_init():
         logging.info(f'Unique ID for instanceTwo : {id(instanceTwo)}')
     else:
         logging.info('instanceOne and instanceTwo are different')
+
+
+def example_reference_counting():
+    objectOne = SampleClassWithInstanceProperties(property="string")
+    # Value of reference count returned by sys.getrefcount() is always 1 more as this function also has a reference to
+    # the object when called.
+    logging.info(f'Reference count for objectOne : {sys.getrefcount(objectOne)}')
+    logging.info('Adding more references to the object')
+    objectTwo = objectOne
+    logging.info(f'Reference count for objectOne : {sys.getrefcount(objectOne)}')
+    logging.info(f'Reference count for objectTwo : {sys.getrefcount(objectTwo)}')
+
+    

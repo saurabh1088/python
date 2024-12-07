@@ -17,6 +17,7 @@ def main():
     concepts.example_create_object_for_sample_class_with_instance_properties()
     concepts.example_create_object_for_sample_class_with_type_properties()
     concepts.example_using_singleton_created_with_init()
+    concepts.example_reference_counting()
 
 if __name__ == '__main__':
     main()
