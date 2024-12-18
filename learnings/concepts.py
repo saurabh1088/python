@@ -59,6 +59,19 @@ class SingletonUsingInit:
             SingletonUsingInit.__instance = self
 
 
+# Inheritance
+class Vehicle:
+
+    def __init__(self, wheels):
+        logging.info('Initialising class Vehicle...')
+        self.wheels = wheels
+
+
+class Car(Vehicle):
+    pass
+
+
+# Example methods
 def example_initialise_sample_class():
     object = SampleClassDeclaration()
     
@@ -137,5 +150,13 @@ def example_object_reference_removal_using_del():
     # Calling below will now cause an exception
     # logging.info(f'Reference count for objectTwo : {sys.getrefcount(objectTwo)}')
         
+
+def example_using_class_and_subclass_showing_inheritance():
+    parentObject = Vehicle(wheels=0)
+    logging.info(f'Wheels of vehicle go round and round : {parentObject.wheels}')
+
+    childObject = Car(wheels=4)
+    logging.info(f'Wheels of car go round and round : {childObject.wheels}')
+
 
     

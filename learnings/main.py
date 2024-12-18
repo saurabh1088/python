@@ -19,6 +19,7 @@ def main():
     concepts.example_using_singleton_created_with_init()
     concepts.example_reference_counting()
     concepts.example_object_reference_removal_using_del()
+    concepts.example_using_class_and_subclass_showing_inheritance()
 
 if __name__ == '__main__':
     main()
