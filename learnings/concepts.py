@@ -159,4 +159,10 @@ def example_using_class_and_subclass_showing_inheritance():
     logging.info(f'Wheels of car go round and round : {childObject.wheels}')
 
 
+def example_showing_python_as_interpreted_language():
+    logging.info('Python is an interpreted language, so it is not compiled before execution.')
+    logging.info('This means that the code is executed line by line, and any syntax errors will be thrown at runtime.')
+    undefined_variable
+    logging.info('This line will not be executed due to the error above.')
+
     

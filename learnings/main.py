@@ -20,6 +20,7 @@ def main():
     concepts.example_reference_counting()
     concepts.example_object_reference_removal_using_del()
     concepts.example_using_class_and_subclass_showing_inheritance()
+    concepts.example_showing_python_as_interpreted_language()
 
 if __name__ == '__main__':
     main()
