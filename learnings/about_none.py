@@ -18,6 +18,14 @@ def result_type_of_functions_without_any_return():
         print("Output of sample_function_not_returning_any_value() is None")
         print(type(output))
 
+def usage_as_variable_initialisation():
+    # None can be used to initialise a variable. Here object is initialised with None till it is assigned a value.
+    object = None
+    print(object)
+    print('Assigning value to object...')
+    object = 10
+    print(f'Value of object is {object}')
+
 def sample_function_not_returning_any_value():
     pass
 
