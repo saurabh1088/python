@@ -9,3 +9,15 @@ def singleton_nature_of_none():
     # is operator checks for identity, meaning it determines whether two variables point to the same object in memory.
     # The output of the below print statement will be True, because None is a singleton.
     print(objectOne is objectTwo is objectThree)
+
+def result_type_of_functions_without_any_return():
+    # The return value of a function without a return statement is None.
+    # The output of the below print statement will be None.
+    output = sample_function_not_returning_any_value()
+    if output is None:
+        print("Output of sample_function_not_returning_any_value() is None")
+        print(type(output))
+
+def sample_function_not_returning_any_value():
+    pass
+
