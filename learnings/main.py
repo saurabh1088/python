@@ -13,6 +13,7 @@ logging.basicConfig(
 
 def about_none_method_calls():
     about_none.type_of_none()
+    about_none.singleton_nature_of_none()
 
 def concepts_method_calls():
     concepts.example_dynamic_typing_in_python()
