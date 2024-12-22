@@ -26,6 +26,13 @@ def usage_as_variable_initialisation():
     object = 10
     print(f'Value of object is {object}')
 
+def usage_as_in_boolean_context():
+    # None is considered as False in a boolean context.
+    if None:
+        print("None is True")
+    else:
+        print("None is False")
+
 def sample_function_not_returning_any_value():
     pass
 

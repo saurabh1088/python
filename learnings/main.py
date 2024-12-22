@@ -16,6 +16,7 @@ def about_none_method_calls():
     about_none.singleton_nature_of_none()
     about_none.result_type_of_functions_without_any_return()
     about_none.usage_as_variable_initialisation()
+    about_none.usage_as_in_boolean_context()
 
 def concepts_method_calls():
     concepts.example_dynamic_typing_in_python()
