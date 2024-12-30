@@ -9,6 +9,13 @@ logging.basicConfig(
     ]
 )
 
+# In the example below we are going to see how pointers behave over int types.
+# Here numberOne is assigned a value of 10 and numberTwo is assigned the value of numberOne.
+# At this point both numberOne and numberTwo are pointing to the same memory location.
+# This can be verified by checking the address of numberOne and numberTwo which comes out to be same.
+# Further when numberTwo is updated to 20, numberOne still holds the value 10 as numberTwo is pointing to a different memory location.
+# This can be verified by checking the address of numberOne and numberTwo which comes out to be different.
+# This behaviour is different from the behaviour of pointers over dict types or some other types.
 def example_pointer_behaviour_over_int_types():
     numberOne = 10
     numberTwo = numberOne
@@ -37,6 +44,7 @@ def example_pointer_behaviour_over_int_types():
         logging.info('numberOne and numberTwo are pointing to different memory locations')
 
 
+# This example shows how pointers behave over dict types, which is different from the behaviour of pointers over int types.
 def example_pointer_behaviour_over_dict_types():
     dictOne = {'value': 10}
     dictTwo = dictOne
@@ -64,4 +72,3 @@ def example_pointer_behaviour_over_dict_types():
     else:
         logging.info('dictOne and dictTwo are pointing to different memory locations')
 
-        
