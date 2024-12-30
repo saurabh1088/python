@@ -1,6 +1,7 @@
 import concepts
 import logging
 import about_none
+import about_pointers
 
 logging.basicConfig(
     level=logging.INFO,
@@ -10,6 +11,9 @@ logging.basicConfig(
         logging.StreamHandler()
     ]
 )
+
+def about_pointers_method_calls():
+    about_pointers.example_pointer_behaviour_over_int_types()
 
 def about_none_method_calls():
     about_none.type_of_none()
@@ -31,6 +35,7 @@ def concepts_method_calls():
 
 def main():
     logging.info('This is entry point')
+    about_pointers_method_calls()
     about_none_method_calls()
     concepts_method_calls()    
 
