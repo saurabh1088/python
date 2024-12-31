@@ -31,10 +31,9 @@ class LinkedList:
         if self.head is None:
             self.head = newNode
             self.tail = newNode
-            return
         else:
             self.tail.next = newNode
             self.tail = newNode
         
-        self.length = 1
+        self.length += 1
 
