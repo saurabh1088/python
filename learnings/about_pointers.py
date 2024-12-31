@@ -72,3 +72,33 @@ def example_pointer_behaviour_over_dict_types():
     else:
         logging.info('dictOne and dictTwo are pointing to different memory locations')
 
+
+# This example shows how pointers behave over list types, which is different from the behaviour of pointers over int types.
+# Behaviour of pointers over list types is similar to the behaviour of pointers over dict types.
+def example_pointer_behaviour_over_list_types():
+    listOne = [1, 2, 3]
+    listTwo = listOne
+
+    logging.info(f'listOne is {listOne}')
+    logging.info(f'listTwo is {listTwo}')
+
+    logging.info(f'Address of listOne is {id(listOne)}')
+    logging.info(f'Address of listTwo is {id(listTwo)}')
+
+    logging.info('Updating listTwo...')
+
+    listTwo[1] = 20
+
+    logging.info('Values after update of listTwo are:')
+    logging.info(f'listOne is {listOne}')
+    logging.info(f'listTwo is {listTwo}')
+
+    logging.info(f'Address of listOne is {id(listOne)}')
+    logging.info(f'Address of listTwo is {id(listTwo)}')
+
+    logging.info('Checking if listOne and listTwo are pointing to the same memory location...')
+    if id(listOne) == id(listTwo):
+        logging.info('listOne and listTwo are pointing to the same memory location')
+    else:
+        logging.info('listOne and listTwo are pointing to different memory locations')
+
