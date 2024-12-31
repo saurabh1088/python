@@ -154,3 +154,19 @@ def example_pointers_check_reference_equality():
     else:
         logging.info('dictOne and dictTwo are pointing to different memory locations')
 
+
+# Summary Table of Pointer Behavior
+# ----------------------------------------------------------------------------------------------------------------------
+
+# Type             | Mutable/Immutable | Behavior
+# -----------------|-------------------|--------------------------------
+# int              | Immutable         | Changes create a new object.
+# float            | Immutable         | Changes create a new object.
+# bool             | Immutable         | Changes create a new object.
+# str              | Immutable         | Changes create a new object.
+# tuple            | Immutable         | Changes create a new object.
+# list             | Mutable           | Changes affect all references.
+# dict             | Mutable           | Changes affect all references.
+# set              | Mutable           | Changes affect all references.
+# Custom Class     | By default Mutable| Changes affect all references (unless overridden).
+
