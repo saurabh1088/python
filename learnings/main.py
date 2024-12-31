@@ -14,6 +14,7 @@ logging.basicConfig(
 
 def about_pointers_method_calls():
     about_pointers.example_pointer_behaviour_over_int_types()
+    about_pointers.example_pointer_behaviour_over_string_types()
     about_pointers.example_pointer_behaviour_over_dict_types()
     about_pointers.example_pointer_behaviour_over_list_types()
     about_pointers.example_pointers_check_reference_equality()

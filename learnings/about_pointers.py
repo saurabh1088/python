@@ -9,6 +9,9 @@ logging.basicConfig(
     ]
 )
 
+# Pointers behaviour against immutable data types
+# ----------------------------------------------------------------------------------------------------------------------
+
 # In the example below we are going to see how pointers behave over int types.
 # Here numberOne is assigned a value of 10 and numberTwo is assigned the value of numberOne.
 # At this point both numberOne and numberTwo are pointing to the same memory location.
@@ -43,6 +46,37 @@ def example_pointer_behaviour_over_int_types():
     else:
         logging.info('numberOne and numberTwo are pointing to different memory locations')
 
+
+def example_pointer_behaviour_over_string_types():
+    stringOne = 'Hello'
+    stringTwo = stringOne
+
+    logging.info(f'stringOne is {stringOne}')
+    logging.info(f'stringTwo is {stringTwo}')
+
+    logging.info(f'Address of stringOne is {id(stringOne)}')
+    logging.info(f'Address of stringTwo is {id(stringTwo)}')
+
+    logging.info('Updating stringTwo...')
+
+    stringTwo = 'World'
+
+    logging.info('Values after update of stringTwo are:')
+    logging.info(f'stringOne is {stringOne}')
+    logging.info(f'stringTwo is {stringTwo}')
+
+    logging.info(f'Address of stringOne is {id(stringOne)}')
+    logging.info(f'Address of stringTwo is {id(stringTwo)}')
+
+    logging.info('Checking if stringOne and stringTwo are pointing to the same memory location...')
+    if id(stringOne) == id(stringTwo):
+        logging.info('stringOne and stringTwo are pointing to the same memory location')
+    else:
+        logging.info('stringOne and stringTwo are pointing to different memory locations')
+
+
+# Pointers behaviour against mutable data types
+# ----------------------------------------------------------------------------------------------------------------------
 
 # This example shows how pointers behave over dict types, which is different from the behaviour of pointers over int types.
 def example_pointer_behaviour_over_dict_types():
