@@ -102,3 +102,21 @@ def example_pointer_behaviour_over_list_types():
     else:
         logging.info('listOne and listTwo are pointing to different memory locations')
 
+
+# is keyword is used to check if two variables are pointing to the same memory location.
+def example_pointers_check_reference_equality():
+    dictOne = {'value': 10}
+    dictTwo = dictOne
+
+    logging.info(f'dictOne is {dictOne}')
+    logging.info(f'dictTwo is {dictTwo}')
+
+    logging.info(f'Address of dictOne is {id(dictOne)}')
+    logging.info(f'Address of dictTwo is {id(dictTwo)}')
+
+    logging.info('Checking if dictOne and dictTwo are pointing to the same memory location...')
+    if dictOne is dictTwo:
+        logging.info('dictOne and dictTwo are pointing to the same memory location')
+    else:
+        logging.info('dictOne and dictTwo are pointing to different memory locations')
+
