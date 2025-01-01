@@ -62,4 +62,17 @@ class LinkedList:
         return lastNode
         
             
+    def prepend(self, value):
+        # Create a new node with passed value
+        newNode = Node(value)
+
+        # Check if the linked list is empty
+        if self.head is None:
+            self.head = newNode
+            self.tail = newNode
+            self.length += 1
+        else:
+            newNode.next = self.head
+            self.head = newNode
+            self.length += 1        
         
