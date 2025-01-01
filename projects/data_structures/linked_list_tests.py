@@ -90,6 +90,16 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(ll.tail.value, 10)
         self.assertEqual(ll.length, 1)
 
+    # Test case for prepend method of LinkedList class when there are multiple nodes in the linked list
+    def test_prepend_method_when_linked_list_has_multiple_nodes(self):
+        ll = linked_list.LinkedList(5)
+        ll.append(10)
+        ll.append(15)
+        ll.prepend(0)
+        self.assertEqual(ll.head.value, 0)
+        self.assertEqual(ll.tail.value, 15)
+        self.assertEqual(ll.length, 4)
+
 
 if __name__ == "__main__":
     unittest.main()
