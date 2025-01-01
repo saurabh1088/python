@@ -37,3 +37,29 @@ class LinkedList:
         
         self.length += 1
 
+
+    def pop(self):
+        # Check if the linked list is empty
+        if self.head is None:
+            return None
+        
+        # Check if there is only one node in the linked list
+        temp = self.head
+        if self.head.next is None:
+            self.head = None
+            self.tail = None
+            self.length -= 1
+            return temp
+        
+        # Traverse the linked list to get the second last node
+        secondLastNode = self.head
+        while secondLastNode.next.next:
+            secondLastNode = secondLastNode.next
+        lastNode = secondLastNode.next
+        secondLastNode.next = None
+        self.tail = secondLastNode
+        self.length -= 1
+        return lastNode
+        
+            
+        
