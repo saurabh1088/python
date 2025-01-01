@@ -70,6 +70,27 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(ll.tail.value, 10)
         self.assertEqual(ll.length, 2)
 
+    # Test case for prepend method of LinkedList class when the linked list is empty
+    def test_prepend_method_when_linked_list_is_empty(self):
+        ll = linked_list.LinkedList(5)
+        ll.head = None
+        ll.tail = None
+        ll.length = 0
+
+        # Assert list is empty
+        self.assertEqual(ll.head, None)
+        self.assertEqual(ll.tail, None)
+        self.assertEqual(ll.length, 0)
+
+        # Prepend a new node
+        ll.prepend(10)
+
+        # Assert new node is added to the linked list
+        self.assertEqual(ll.head.value, 10)
+        self.assertEqual(ll.tail.value, 10)
+        self.assertEqual(ll.length, 1)
+
+
 if __name__ == "__main__":
     unittest.main()
 
