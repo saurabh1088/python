@@ -118,3 +118,24 @@ class LinkedList:
         return temp
     
 
+    def put_value(self, value, index):
+        if index < 0 or index >= self.length:
+            return None
+        
+        newNode = Node(value)
+
+        if index == 0:
+            newNode.next = self.head
+            self.head = newNode
+            self.length += 1
+            return True
+        else:
+            temp = self.head
+            for i in range(index - 1):
+                temp = temp.next
+
+            newNode.next = temp.next
+            temp.next = newNode
+            self.length += 1
+            return True
+
