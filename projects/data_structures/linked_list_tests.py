@@ -70,6 +70,32 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(ll.tail.value, 10)
         self.assertEqual(ll.length, 2)
 
+    # Test case for pop_first method of LinkedList class when linked list is empty
+    def test_pop_first_method_when_linked_list_is_empty(self):
+        ll = linked_list.LinkedList(5)
+        ll.head = None
+        ll.tail = None
+        ll.length = 0
+        self.assertEqual(ll.pop_first(), None)
+
+    # Test case for pop_first method of LinkedList class when there is only one node in the linked list
+    def test_pop_first_method_when_linked_list_has_only_one_node(self):
+        ll = linked_list.LinkedList(5)
+        self.assertEqual(ll.pop_first().value, 5)
+        self.assertEqual(ll.head, None)
+        self.assertEqual(ll.tail, None)
+        self.assertEqual(ll.length, 0)
+
+    # Test case for pop_first method of LinkedList class when there are multiple nodes in the linked list
+    def test_pop_first_method_when_linked_list_has_multiple_nodes(self):
+        ll = linked_list.LinkedList(5)
+        ll.append(10)
+        ll.append(15)
+        self.assertEqual(ll.pop_first().value, 5)
+        self.assertEqual(ll.head.value, 10)
+        self.assertEqual(ll.tail.value, 15)
+        self.assertEqual(ll.length, 2)
+
     # Test case for prepend method of LinkedList class when the linked list is empty
     def test_prepend_method_when_linked_list_is_empty(self):
         ll = linked_list.LinkedList(5)
