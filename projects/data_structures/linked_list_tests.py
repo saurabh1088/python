@@ -126,6 +126,27 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(ll.tail.value, 15)
         self.assertEqual(ll.length, 4)
 
+    # Test case for get method of LinkedList class when index is out of range
+    def test_get_method_when_index_is_out_of_range(self):
+        ll = linked_list.LinkedList(5)
+        ll.append(10)
+        ll.append(15)
+        self.assertEqual(ll.get(4), None)
+
+    # Test case for get method of LinkedList class when index is in range
+    def test_get_method_when_index_is_in_range(self):
+        ll = linked_list.LinkedList(5)
+        ll.append(10)
+        ll.append(15)
+        self.assertEqual(ll.get(1).value, 10)
+
+    # Test case for get method of LinkedList class when index is 0
+    def test_get_method_when_index_is_zero(self):
+        ll = linked_list.LinkedList(5)
+        ll.append(10)
+        ll.append(15)
+        self.assertEqual(ll.get(0).value, 5)
+
 
 if __name__ == "__main__":
     unittest.main()
