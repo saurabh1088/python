@@ -61,7 +61,7 @@ class LinkedList:
         self.length -= 1
         return lastNode
         
-        
+
     """
     Removes and returns the first element from the linked list.
     
@@ -100,3 +100,21 @@ class LinkedList:
             self.head = newNode
             self.length += 1        
         
+    
+    """
+    Retrieve the node at the given index in the linked list.
+
+    :param index: The index of the node to retrieve
+    :return: The node at the specified index or None if the index is out of range
+    """
+    def get(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        
+        temp = self.head
+        for _ in range(index):
+            temp = temp.next
+
+        return temp
+    
+
