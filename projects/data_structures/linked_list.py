@@ -61,6 +61,30 @@ class LinkedList:
         self.length -= 1
         return lastNode
         
+        
+    """
+    Removes and returns the first element from the linked list.
+    
+    Returns:
+        The node at the head of the list or None if the list is empty.
+    
+    Time Complexity: O(1)
+    """
+    def pop_first(self):
+        if self.head is None:
+            return None
+        
+        temp = self.head
+        if self.head.next is None:
+            self.head = None
+            self.tail = None
+            self.length -= 1
+            return temp
+        else:
+            self.head = self.head.next
+            self.length -= 1
+            return temp
+
             
     def prepend(self, value):
         # Create a new node with passed value
