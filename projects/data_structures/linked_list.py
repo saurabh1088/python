@@ -118,9 +118,19 @@ class LinkedList:
         return temp
     
 
-    def put_value(self, value, index):
+    """
+    Insert a new node with the given value at the specified index.
+
+    Args:
+    value: The data to be inserted into the new node.
+    index: The position at which to insert the new node.
+
+    Returns:
+    bool: True if insertion was successful, False if the index was out of bounds.
+    """
+    def insert(self, value, index):
         if index < 0 or index >= self.length:
-            return None
+            return False
         
         newNode = Node(value)
 
