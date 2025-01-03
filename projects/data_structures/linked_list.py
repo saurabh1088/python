@@ -129,7 +129,7 @@ class LinkedList:
     bool: True if insertion was successful, False if the index was out of bounds.
     """
     def insert(self, value, index):
-        if index < 0 or index >= self.length:
+        if index < 0 or index > self.length:
             return False
         
         newNode = Node(value)
@@ -137,6 +137,11 @@ class LinkedList:
         if index == 0:
             newNode.next = self.head
             self.head = newNode
+            self.length += 1
+            return True
+        if index == self.length:
+            self.tail.next = newNode
+            self.tail = newNode
             self.length += 1
             return True
         else:
