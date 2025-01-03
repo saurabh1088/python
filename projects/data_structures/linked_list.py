@@ -154,3 +154,21 @@ class LinkedList:
             self.length += 1
             return True
 
+
+    """
+    Set the value of the node at the specified index.
+
+    Args:
+    index (int): The index of the node whose value needs updating.
+    value: The new value to set.
+
+    Returns:
+    bool: True if the value was set successfully, False otherwise.
+    """
+    def set(self, value, index):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
+    
