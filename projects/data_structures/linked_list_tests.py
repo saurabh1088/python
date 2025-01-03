@@ -186,6 +186,21 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(ll.length, 5)
         self.assertEqual(ll.get(4).value, 25)
 
+    # Test case for set method of LinkedList class when index is out of range
+    def test_set_method_when_index_is_out_of_range(self):
+        ll = linked_list.LinkedList(5)
+        ll.append(10)
+        ll.append(15)
+        self.assertEqual(ll.set(20, 4), False)
+
+    # Test case for set method of LinkedList class when index is in range
+    def test_set_method_when_index_is_in_range(self):
+        ll = linked_list.LinkedList(5)
+        ll.append(10)
+        ll.append(15)
+        ll.set(20, 1)
+        self.assertEqual(ll.get(1).value, 20)
+
 
 if __name__ == "__main__":
     unittest.main()
