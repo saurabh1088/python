@@ -201,6 +201,32 @@ class TestLinkedList(unittest.TestCase):
         ll.set(20, 1)
         self.assertEqual(ll.get(1).value, 20)
 
+    # Test case for remove method of LinkedList class when index is out of range
+    def test_remove_method_when_index_is_out_of_range(self):
+        ll = linked_list.LinkedList(5)
+        ll.append(10)
+        ll.append(15)
+        self.assertEqual(ll.remove(4), None)
+
+    # Test case for remove method of LinkedList class when index is in range
+    def test_remove_method_when_index_is_in_range(self):
+        ll = linked_list.LinkedList(5)
+        ll.append(10)
+        ll.append(15)
+        self.assertEqual(ll.remove(1).value, 10)
+        self.assertEqual(ll.head.value, 5)
+        self.assertEqual(ll.tail.value, 15)
+        self.assertEqual(ll.length, 2)
+
+    # Test case for remove method of LinkedList class when list is empty
+    def test_remove_method_when_linked_list_is_empty(self):
+        ll = linked_list.LinkedList(5)
+        ll.head = None
+        ll.tail = None
+        ll.length = 0
+        self.assertEqual(ll.remove(0), None)
+        self.assertEqual(ll.remove(1), None)
+        self.assertEqual(ll.remove(10), None)
 
 if __name__ == "__main__":
     unittest.main()
