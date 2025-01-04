@@ -172,3 +172,31 @@ class LinkedList:
             return True
         return False
     
+
+    """
+    Remove the node at the given index from the linked list.
+
+    Args:
+    index (int): The position of the node to remove.
+
+    Returns:
+    Node: The removed node or None if the index was out of bounds.
+    """
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        
+        if index == 0:
+            return self.pop_first()
+        if index == self.length - 1:
+            return self.pop()
+        
+        temp = self.head
+        for _ in range(index - 1):
+            temp = temp.next
+        node_to_be_removed = temp.next
+        temp.next = node_to_be_removed.next
+        node_to_be_removed.next = None
+        self.length -= 1
+        return node_to_be_removed
+    
