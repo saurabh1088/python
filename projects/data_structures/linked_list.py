@@ -10,12 +10,49 @@ logging.basicConfig(
 )
 
 class Node:
+    """
+    A class representing a node in a singly linked list.
+
+    Attributes:
+        value: The data stored in the node.
+        next (Node): Reference to the next node in the list, None if it's the last node.
+    """
 
     def __init__(self, value):
         self.value = value
         self.next = None
 
 class LinkedList:
+    """
+    A class implementing a singly linked list data structure.
+
+    This LinkedList uses a Node class to represent each element,
+    where each node holds a value and a reference to the next node.
+    The list maintains pointers to both the head (first node) and
+    tail (last node) for efficient operations at both ends.
+
+    Attributes:
+        head (Node): The first node in the list.
+        tail (Node): The last node in the list.
+        length (int): The number of nodes in the list.
+
+    Methods:
+        __init__(value): Initializes the list with one node.
+        append(value): Adds a node to the end of the list.
+        pop(): Removes and returns the last node.
+        pop_first(): Removes and returns the first node.
+        prepend(value): Adds a node to the start of the list.
+        get(index): Retrieves the node at the given index.
+        insert(value, index): Inserts a new node at the specified index.
+        set(value, index): Updates the value of the node at the given index.
+        remove(index): Removes and returns the node at the specified index.
+
+    Time Complexity:
+        - Append/Prepend: O(1)
+        - Pop/PoPFirst: O(1) for first, O(n) for last
+        - Insert/Remove: O(n) in worst case due to traversal
+        - Get/Set: O(n) due to traversal
+    """
 
     def __init__(self, value):
         newNode = Node(value)
