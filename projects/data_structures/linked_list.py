@@ -277,3 +277,24 @@ class LinkedList:
         self.length -= 1
         return node_to_be_removed
     
+
+    def reverse(self):
+        if self.length < 2:
+            return True
+
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+
+        prev = None
+        current = temp
+        next_node = None if temp is None else temp.next
+
+        while current:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+
+        return True
+
