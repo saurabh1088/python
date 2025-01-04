@@ -23,7 +23,22 @@ class LinkedList:
         self.tail = newNode
         self.length = 1
 
+
     def append(self, value):
+        """
+        Add a node with the given value to the end of the linked list.
+
+        Args:
+            value: The data to be stored in the new node.
+
+        Returns:
+            None
+
+        Effects:
+            - Increases the length of the list by 1.
+            - Updates the tail of the list to the new node.
+            - If the list was empty, both head and tail are set to the new node.
+        """
         # Create a new node
         newNode = Node(value)
 
@@ -39,6 +54,17 @@ class LinkedList:
 
 
     def pop(self):
+        """
+        Removes and returns the last node from the linked list.
+
+        Returns:
+            Node: The last node of the list or None if the list is empty.
+
+        Effects:
+            - Decreases the length of the list by 1.
+            - Updates the tail of the list.
+            - If the list had only one node, sets both head and tail to None.
+        """
         # Check if the linked list is empty
         if self.head is None:
             return None
@@ -60,17 +86,17 @@ class LinkedList:
         self.tail = secondLastNode
         self.length -= 1
         return lastNode
-        
 
-    """
-    Removes and returns the first element from the linked list.
     
-    Returns:
-        The node at the head of the list or None if the list is empty.
-    
-    Time Complexity: O(1)
-    """
     def pop_first(self):
+        """
+        Removes and returns the first element from the linked list.
+    
+        Returns:
+            The node at the head of the list or None if the list is empty.
+    
+        Time Complexity: O(1)
+        """
         if self.head is None:
             return None
         
@@ -87,6 +113,20 @@ class LinkedList:
 
             
     def prepend(self, value):
+        """
+        Add a node with the given value to the beginning of the linked list.
+
+        Args:
+            value: The data to be stored in the new node.
+
+        Returns:
+            None
+
+        Effects:
+            - Increases the length of the list by 1.
+            - Updates the head of the list to the new node.
+            - If the list was empty, sets both head and tail to the new node.
+        """
         # Create a new node with passed value
         newNode = Node(value)
 
@@ -101,13 +141,13 @@ class LinkedList:
             self.length += 1        
         
     
-    """
-    Retrieve the node at the given index in the linked list.
-
-    :param index: The index of the node to retrieve
-    :return: The node at the specified index or None if the index is out of range
-    """
     def get(self, index):
+        """
+        Retrieve the node at the given index in the linked list.
+
+        :param index: The index of the node to retrieve
+        :return: The node at the specified index or None if the index is out of range
+        """
         if index < 0 or index >= self.length:
             return None
         
@@ -117,18 +157,18 @@ class LinkedList:
 
         return temp
     
-
-    """
-    Insert a new node with the given value at the specified index.
-
-    Args:
-    value: The data to be inserted into the new node.
-    index: The position at which to insert the new node.
-
-    Returns:
-    bool: True if insertion was successful, False if the index was out of bounds.
-    """
+    
     def insert(self, value, index):
+        """
+        Insert a new node with the given value at the specified index.
+
+        Args:
+        value: The data to be inserted into the new node.
+        index: The position at which to insert the new node.
+
+        Returns:
+        bool: True if insertion was successful, False if the index was out of bounds.
+        """
         if index < 0 or index > self.length:
             return False
         
@@ -154,35 +194,35 @@ class LinkedList:
             self.length += 1
             return True
 
-
-    """
-    Set the value of the node at the specified index.
-
-    Args:
-    index (int): The index of the node whose value needs updating.
-    value: The new value to set.
-
-    Returns:
-    bool: True if the value was set successfully, False otherwise.
-    """
+    
     def set(self, value, index):
+        """
+        Set the value of the node at the specified index.
+
+        Args:
+        index (int): The index of the node whose value needs updating.
+        value: The new value to set.
+
+        Returns:
+        bool: True if the value was set successfully, False otherwise.
+        """
         temp = self.get(index)
         if temp:
             temp.value = value
             return True
         return False
     
-
-    """
-    Remove the node at the given index from the linked list.
-
-    Args:
-    index (int): The position of the node to remove.
-
-    Returns:
-    Node: The removed node or None if the index was out of bounds.
-    """
+    
     def remove(self, index):
+        """
+        Remove the node at the given index from the linked list.
+
+        Args:
+        index (int): The position of the node to remove.
+
+        Returns:
+        Node: The removed node or None if the index was out of bounds.
+        """
         if index < 0 or index >= self.length:
             return None
         
