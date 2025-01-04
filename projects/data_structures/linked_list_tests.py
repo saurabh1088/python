@@ -228,6 +228,51 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(ll.remove(1), None)
         self.assertEqual(ll.remove(10), None)
 
+    # Test case for reverse method of LinkedList class when list is empty
+    def test_reverse_method_when_linked_list_is_empty(self):
+        ll = linked_list.LinkedList(5)
+        ll.head = None
+        ll.tail = None
+        ll.length = 0
+        self.assertEqual(ll.reverse(), True)
+
+    # Test case for reverse method of LinkedList class when list has only one node
+    def test_reverse_method_when_linked_list_has_only_one_node(self):
+        ll = linked_list.LinkedList(5)
+        self.assertEqual(ll.reverse(), True)
+        self.assertEqual(ll.head.value, 5)
+        self.assertEqual(ll.tail.value, 5)
+        self.assertEqual(ll.length, 1)
+
+    # Test case for reverse method of LinkedList class when list has three nodes
+    def test_reverse_method_when_linked_list_has_three_nodes(self):
+        ll = linked_list.LinkedList(5)
+        ll.append(10)
+        ll.append(15)
+        ll.reverse()
+        self.assertEqual(ll.head.value, 15)
+        self.assertEqual(ll.tail.value, 5)
+        self.assertEqual(ll.length, 3)
+
+    # Test case for reverse method of LinkedList class when list has multiple nodes
+    def test_reverse_method_when_linked_list_has_multiple_nodes(self):
+        ll = linked_list.LinkedList(5)
+        ll.append(10)
+        ll.append(15)
+        ll.append(20)
+        ll.append(25)
+        ll.append(30)
+        ll.reverse()
+        self.assertEqual(ll.head.value, 30)
+        self.assertEqual(ll.get(0).value, 30)
+        self.assertEqual(ll.get(1).value, 25)
+        self.assertEqual(ll.get(2).value, 20)
+        self.assertEqual(ll.get(3).value, 15)
+        self.assertEqual(ll.get(4).value, 10)
+        self.assertEqual(ll.get(5).value, 5)
+        self.assertEqual(ll.tail.value, 5)
+        self.assertEqual(ll.length, 6)
+
 if __name__ == "__main__":
     unittest.main()
 
