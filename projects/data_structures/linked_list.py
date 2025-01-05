@@ -76,6 +76,8 @@ class LinkedList:
             - Updates the tail of the list to the new node.
             - If the list was empty, both head and tail are set to the new node.
         """
+        logging.info(f"Appending {value} to the linked list")
+
         # Create a new node
         newNode = Node(value)
 
@@ -102,6 +104,8 @@ class LinkedList:
             - Updates the tail of the list.
             - If the list had only one node, sets both head and tail to None.
         """
+        logging.info("Popping the last element from the linked list")
+
         # Check if the linked list is empty
         if self.head is None:
             return None
@@ -134,6 +138,8 @@ class LinkedList:
     
         Time Complexity: O(1)
         """
+        logging.info("Popping the first element from the linked list")
+
         if self.head is None:
             return None
         
@@ -164,6 +170,8 @@ class LinkedList:
             - Updates the head of the list to the new node.
             - If the list was empty, sets both head and tail to the new node.
         """
+        logging.info(f"Prepending {value} to the linked list")
+
         # Create a new node with passed value
         newNode = Node(value)
 
@@ -185,6 +193,8 @@ class LinkedList:
         :param index: The index of the node to retrieve
         :return: The node at the specified index or None if the index is out of range
         """
+        logging.info(f"Getting the node at index {index} from the linked list")
+
         if index < 0 or index >= self.length:
             return None
         
@@ -206,6 +216,8 @@ class LinkedList:
         Returns:
         bool: True if insertion was successful, False if the index was out of bounds.
         """
+        logging.info(f"Inserting {value} at index {index} in the linked list")
+
         if index < 0 or index > self.length:
             return False
         
@@ -243,6 +255,8 @@ class LinkedList:
         Returns:
         bool: True if the value was set successfully, False otherwise.
         """
+        logging.info(f"Setting the value at index {index} to {value} in the linked list")
+
         temp = self.get(index)
         if temp:
             temp.value = value
@@ -260,6 +274,8 @@ class LinkedList:
         Returns:
         Node: The removed node or None if the index was out of bounds.
         """
+        logging.info(f"Removing the node at index {index} from the linked list")
+
         if index < 0 or index >= self.length:
             return None
         
@@ -279,6 +295,24 @@ class LinkedList:
     
 
     def reverse(self):
+        """
+        Reverses the order of nodes in the linked list.
+
+        This method performs an in-place reversal of the linked list by:
+        - Swapping the head and tail pointers.
+        - Iterating through each node, reassigning the 'next' pointer to point 
+        to the previous node, effectively reversing the link direction.
+
+        Returns:
+            bool: Always returns True, indicating the reversal was successful.
+
+        Note:
+            - If the list has fewer than 2 nodes, it is considered already "reversed" 
+            and the method returns immediately.
+            - The method modifies the list structure directly, no new nodes are created.
+        """
+        logging.info("Reversing the linked list")
+        
         if self.length < 2:
             return True
 
