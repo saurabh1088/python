@@ -48,6 +48,46 @@ def find_middle_in_linked_list(ll):
 
     return temp
 
+# Detect if the given linked list is circular (i.e., the tail node points to a node within the list).
+def is_circular_linked_list(ll):
+    """
+    Determine if the given linked list is circular.
+
+    This function uses Floyd's cycle-finding algorithm (also known as the "tortoise and hare" method)
+    to detect if there's a cycle in the linked list.
+
+    Args:
+        ll (LinkedList): An instance of a LinkedList class where 'head' is the first node of the list.
+
+    Returns:
+        bool:
+            - True if the linked list is circular (i.e., the last node points to a node within the list).
+            - False if the list is linear or empty.
+
+    Notes:
+        - Assumes 'll' has a 'head' attribute pointing to the first node of the list.
+        - Each node in the list should have a 'next' attribute for this function to work correctly.
+        - If the list has fewer than two nodes, it cannot be circular by definition, so it returns False.
+    """
+    # There is no possibility of a circular list if the list is empty or has only one node.
+    if ll.head is None:
+        return False
+
+    # Initialize two pointers, slow and fast, to the first and second nodes in the list, respectively.
+    slow = ll.head
+    fast = ll.head.next
+
+    while fast is not None and fast.next is not None:
+        # If the slow and fast pointers meet, the list is circular.
+        if slow == fast:
+            return True
+
+        # Move the slow pointer one node ahead and the fast pointer two nodes ahead.
+        slow = slow.next
+        fast = fast.next.next
+
+    return False
+
 
 if __name__ == "__main__":
     ll = linked_list.LinkedList(1)
