@@ -2,6 +2,7 @@ import concepts
 import logging
 import about_none
 import about_pointers
+import about_iterators
 
 logging.basicConfig(
     level=logging.INFO,
@@ -37,11 +38,15 @@ def concepts_method_calls():
     concepts.example_using_class_and_subclass_showing_inheritance()
     concepts.example_showing_python_as_interpreted_language()
 
+def about_iterators_method_calls():
+    about_iterators.example_iterator_behaviour()
+
 def main():
     logging.info('This is entry point')
-    about_pointers_method_calls()
-    about_none_method_calls()
-    concepts_method_calls()    
+    # about_pointers_method_calls()
+    # about_none_method_calls()
+    # concepts_method_calls()
+    # about_iterators_method_calls()
 
 if __name__ == '__main__':
     main()
