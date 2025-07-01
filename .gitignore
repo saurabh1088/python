@@ -163,3 +163,10 @@ cython_debug/
 
 # macOS
 .DS_Store
+
+# PyCharm IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+
