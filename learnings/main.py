@@ -40,6 +40,7 @@ def concepts_method_calls():
 
 def about_iterators_method_calls():
     about_iterators.example_iterator_behaviour()
+    about_iterators.example_iterator_behaviour_for_custom_counter_iterator()
 
 def main():
     logging.info('This is entry point')
