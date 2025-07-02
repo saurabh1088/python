@@ -33,6 +33,17 @@ def example_iterator_behaviour_for_custom_counter_iterator():
     for item in iterator:
         print(item)
 
+def example_iterator_behaviour_going_beyond_limit():
+    counter = Counter(5)
+    iterator = iter(counter)
+    for index in range(6):
+        try:
+            print(next(iterator))
+        except StopIteration:
+            print(f"StopIteration caught! The iterator has been exhausted at index {index}.")
+            break
+
+
 class Counter:
     """
     An iterator that counts from 1 up to a specified maximum value.
