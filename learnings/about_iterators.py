@@ -9,6 +9,9 @@ logging.basicConfig(
     ]
 )
 
+# Here we are manually advancing the iterator.
+# 	•	If you call next() after the iterator is exhausted, it raises a StopIteration exception, and the program crashes unless you catch the error.
+# 	•	Useful when you need fine control over iteration (e.g., partial iteration, pausing, custom error handling).
 def example_iterator_behaviour():
     justice_league_tuple = ("Batman", "Superman", "Wonder Woman", "Flash", "Aquaman")
     iterator = iter(justice_league_tuple)
@@ -18,15 +21,17 @@ def example_iterator_behaviour():
     print(next(iterator))
     print(next(iterator))
 
+# Using for loop Automatically:
+# 	•	Calls iter() on the object (if needed).
+# 	•	Calls next() internally.
+# 	•	Catches StopIteration to end the loop gracefully.
+# 	•	Cleaner and more Pythonic.
+# 	•	Safe from accidental StopIteration crashes.
 def example_iterator_behaviour_for_custom_counter_iterator():
     counter = Counter(5)
     iterator = iter(counter)
-    print(next(iterator))
-    print(next(iterator))
-    print(next(iterator))
-    print(next(iterator))
-    print(next(iterator))
-
+    for item in iterator:
+        print(item)
 
 class Counter:
     """
@@ -78,4 +83,3 @@ class Counter:
         else:
             raise StopIteration
 
-        
