@@ -1,3 +1,4 @@
+import about_generators
 import concepts
 import logging
 import about_none
@@ -43,12 +44,16 @@ def about_iterators_method_calls():
     about_iterators.example_iterator_behaviour_for_custom_counter_iterator()
     about_iterators.example_iterator_behaviour_going_beyond_limit()
 
+def about_generators_method_calls():
+    about_generators.example_generator_behaviour()
+
 def main():
     logging.info('This is entry point')
     # about_pointers_method_calls()
     # about_none_method_calls()
     # concepts_method_calls()
     # about_iterators_method_calls()
+    # about_generators_method_calls()
 
 if __name__ == '__main__':
     main()
