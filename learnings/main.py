@@ -45,6 +45,7 @@ def about_iterators_method_calls():
     about_iterators.example_iterator_behaviour_going_beyond_limit()
 
 def about_generators_method_calls():
+    about_generators.example_simple_generator()
     about_generators.example_generator_behaviour()
 
 def main():
