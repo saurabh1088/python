@@ -4,6 +4,7 @@ import logging
 import about_none
 import about_pointers
 import about_iterators
+import about_static
 
 logging.basicConfig(
     level=logging.INFO,
@@ -48,6 +49,9 @@ def about_generators_method_calls():
     about_generators.example_simple_generator()
     about_generators.example_generator_behaviour()
 
+def about_static_method_calls():
+    about_static.example_calculator_static_methods()
+
 def main():
     logging.info('This is entry point')
     # about_pointers_method_calls()
@@ -55,6 +59,7 @@ def main():
     # concepts_method_calls()
     # about_iterators_method_calls()
     # about_generators_method_calls()
+    # about_static_method_calls()
 
 if __name__ == '__main__':
     main()
