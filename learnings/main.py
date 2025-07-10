@@ -51,6 +51,7 @@ def about_generators_method_calls():
 
 def about_static_method_calls():
     about_static.example_calculator_static_methods()
+    about_static.example_static_methods_called_on_instance()
 
 def main():
     logging.info('This is entry point')

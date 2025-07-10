@@ -14,6 +14,12 @@ def example_calculator_static_methods():
     print(Calculator.is_positive(100))
     print(Calculator.is_positive(-20))
 
+def example_static_methods_called_on_instance():
+    instance = Calculator()
+    print(instance.add(10, 20))
+    print(instance.is_positive(100))
+    print(instance.is_positive(-20))
+
 class Calculator:
     # A static method for a mathematical operation addition
     @staticmethod
