@@ -60,7 +60,7 @@ def main():
     # concepts_method_calls()
     # about_iterators_method_calls()
     # about_generators_method_calls()
-    # about_static_method_calls()
+    about_static_method_calls()
 
 if __name__ == '__main__':
     main()

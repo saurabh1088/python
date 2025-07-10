@@ -10,17 +10,23 @@ logging.basicConfig(
 )
 
 def example_calculator_static_methods():
-    print(Calculator.add(10, 20))
-    print(Calculator.is_positive(100))
-    print(Calculator.is_positive(-20))
+    logging.info('Executing method example_calculator_static_methods')
+    calculated_sum = Calculator.add(10, 20)
+    logging.info(f'Sum using Calculator static method is {calculated_sum}')
+    logging.info(f'Is 100 positive {Calculator.is_positive(100)}')
+    logging.info(f'Is -20 positive {Calculator.is_positive(-20)}')
 
 def example_static_methods_called_on_instance():
+    logging.info('Executing method example_static_methods_called_on_instance')
+    logging.info('Creating calculator instance, static methods will be called over this instance')
     instance = Calculator()
-    print(instance.add(10, 20))
-    print(instance.is_positive(100))
-    print(instance.is_positive(-20))
+
+    logging.info(f'Sum using Calculator static method on instance is {instance.add(10, 20)}')
+    logging.info(f'Is 100 positive {instance.is_positive(100)}')
+    logging.info(f'Is -20 positive {instance.is_positive(-20)}')
 
 def example_calculator_instances():
+    logging.info('Executing method example_calculator_instances')
     some_calculator_instance = Calculator(name='scientific calculator')
     print(some_calculator_instance.add(10, 20))
 
