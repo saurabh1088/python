@@ -9,6 +9,9 @@ logging.basicConfig(
     ]
 )
 
+# --------------------------------------------------------------------------------
+# --- Calculator class implementation ---
+
 # MARK: - Example 1: Calculator with Class Property and Class Methods
 # Scenario: A utility class where certain operations or configurations
 #           might need to be aware of the class itself or its shared state,
@@ -25,12 +28,18 @@ class Calculator:
     # It's suitable for global configurations or constants.
     MAX_CALCULABLE_VALUE = 1_000_000
 
+    # --------------------------------------------------------------------------------
+    # --- Calculator initialiser ---
+
     def __init__(self, name="Default Calculator"):
         """
         An instance method. Instances can also access class properties.
         """
         self.name = name
         logging.info(f"Calculator instance '{self.name}' created.")
+
+    # --------------------------------------------------------------------------------
+    # --- Class methods ---
 
     # Class Method: `add`
     # Now takes `cls` as the first argument. This allows it to access
@@ -66,6 +75,9 @@ class Calculator:
         """Returns information about the calculator's operational limits."""
         return f"This {cls.__name__} operates within a maximum value of: {cls.MAX_CALCULABLE_VALUE}"
 
+    # --------------------------------------------------------------------------------
+    # --- Instance methods ---
+
     # Instance Method: `perform_calculation`
     # Shows an instance method accessing class methods and properties.
     def perform_calculation(self, x, y):
@@ -81,7 +93,8 @@ class Calculator:
         logging.info(f"[{self.name}] Limits Info: {self.get_limits_info()}")
         return result
 
-# --- Example function ---
+# --------------------------------------------------------------------------------
+# --- Example functions ---
 
 def example_calculator_class_methods():
     logging.info('--- Executing example_calculator_class_methods ---')

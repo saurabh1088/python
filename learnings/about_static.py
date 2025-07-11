@@ -9,26 +9,35 @@ logging.basicConfig(
     ]
 )
 
+# --------------------------------------------------------------------------------
+# --- Example functions ---
+
 def example_calculator_static_methods():
-    logging.info('Executing method example_calculator_static_methods')
+    logging.info('--- Executing method example_calculator_static_methods ---')
     calculated_sum = Calculator.add(10, 20)
     logging.info(f'Sum using Calculator static method is {calculated_sum}')
     logging.info(f'Is 100 positive {Calculator.is_positive(100)}')
     logging.info(f'Is -20 positive {Calculator.is_positive(-20)}')
+    logging.info('----------------------------------------------')
 
 def example_static_methods_called_on_instance():
-    logging.info('Executing method example_static_methods_called_on_instance')
+    logging.info('--- Executing method example_static_methods_called_on_instance ---')
     logging.info('Creating calculator instance, static methods will be called over this instance')
     instance = Calculator()
 
     logging.info(f'Sum using Calculator static method on instance is {instance.add(10, 20)}')
     logging.info(f'Is 100 positive {instance.is_positive(100)}')
     logging.info(f'Is -20 positive {instance.is_positive(-20)}')
+    logging.info('----------------------------------------------')
 
 def example_calculator_instances():
-    logging.info('Executing method example_calculator_instances')
+    logging.info('--- Executing method example_calculator_instances ---')
     some_calculator_instance = Calculator(name='scientific calculator')
     print(some_calculator_instance.add(10, 20))
+    logging.info('----------------------------------------------')
+
+# --------------------------------------------------------------------------------
+# --- Calculator class implementation ---
 
 class Calculator:
     """
@@ -40,12 +49,18 @@ class Calculator:
     # It is shared by all instances and the class itself.
     MAX_CALCULABLE_VALUE = 1_000_000
 
+    # --------------------------------------------------------------------------------
+    # --- Calculator class initialiser ---
+
     def __init__(self, name="Default Calculator"):
         """
         An instance method to demonstrate that instances can also access static properties.
         """
         self.name = name
         print(f"Calculator instance '{self.name}' created.")
+
+    # --------------------------------------------------------------------------------
+    # --- Static methods ---
 
     # A static method for a mathematical operation addition
     # Operates purely on input parameters. Does not need 'self' or 'cls'.
@@ -59,12 +74,16 @@ class Calculator:
     def is_positive(num):
         return num > 0
 
+    # --------------------------------------------------------------------------------
     # Static Method: `get_limits_info`
     # Demonstrates a static method providing information derived from a static property.
     @staticmethod
     def get_limits_info():
         """Returns information about the calculator's operational limits."""
         return f"This calculator operates within a maximum value of: {Calculator.MAX_CALCULABLE_VALUE}"
+
+    # --------------------------------------------------------------------------------
+    # --- Instance methods ---
 
     # Instance Method: `perform_calculation`
     # Shows an instance method accessing a static property.
