@@ -6,6 +6,7 @@ import about_pointers
 import about_iterators
 import about_static
 import about_class_members
+import about_strings
 
 logging.basicConfig(
     level=logging.INFO,
@@ -59,6 +60,9 @@ def about_class_members_method_calls():
     about_class_members.example_class_methods_called_on_instance()
     about_class_members.example_calculator_instances_with_class_methods()
 
+def about_strings_method_calls():
+    about_strings.example_string_multiplication()
+
 def main():
     logging.info('This is entry point')
     # about_pointers_method_calls()
@@ -68,6 +72,7 @@ def main():
     # about_generators_method_calls()
     # about_static_method_calls()
     # about_class_members_method_calls()
+    # about_strings_method_calls()
 
 if __name__ == '__main__':
     main()
