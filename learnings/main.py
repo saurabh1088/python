@@ -67,6 +67,9 @@ def about_strings_method_calls():
 def about_operators_method_calls():
     about_operators.example_exponentiation()
     about_operators.example_floor_division()
+    about_operators.example_walrus_operator()
+    about_operators.example_without_using_walrus_operator()
+    about_operators.example_using_walrus_operator()
 
 def main():
     logging.info('This is entry point')

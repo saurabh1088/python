@@ -1,4 +1,5 @@
 import logging
+import random
 
 logging.basicConfig(
     level=logging.INFO,
@@ -95,3 +96,28 @@ def example_floor_division():
     logging.info(f'Floor division of 10 by 3 is : {10 // 3}')
     logging.info('----------------------------------------------')
 
+# Walrus operator (:=) allows one to assign values to variables as part of an expression.
+# It simplifies code by combining assignment and evaluation in a single statement.
+def example_walrus_operator():
+    logging.info('--- Executing example_walrus_operator ---')
+
+    # This won't work
+    # logging.info(f'Value for assignment statement is : {(assignment_statement = 20)}')
+
+    # But using walrus operator we can do like below
+    logging.info(f'Value for assignment expression is : {(assignment_expression := 20)}')
+    logging.info('----------------------------------------------')
+
+def example_without_using_walrus_operator():
+    logging.info('--- Executing example_without_using_walrus_operator ---')
+    value = random.randint(1, 20)
+    while value < 18:
+        logging.info(f'Random value is : {value}')
+        value = random.randint(1, 20)
+    logging.info('----------------------------------------------')
+
+def example_using_walrus_operator():
+    logging.info('--- Executing example_using_walrus_operator ---')
+    while (value := random.randint(1, 20)) < 18:
+        logging.info(f'Random value is : {value}')
+    logging.info('----------------------------------------------')
