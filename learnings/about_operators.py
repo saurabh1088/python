@@ -90,4 +90,8 @@ def example_exponentiation():
     logging.info(f'2 to the power of 16 is : {2**16}')
     logging.info('----------------------------------------------')
 
-    
+def example_floor_division():
+    logging.info('--- Executing example_floor_division ---')
+    logging.info(f'Floor division of 10 by 3 is : {10 // 3}')
+    logging.info('----------------------------------------------')
+

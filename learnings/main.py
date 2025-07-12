@@ -66,6 +66,7 @@ def about_strings_method_calls():
 
 def about_operators_method_calls():
     about_operators.example_exponentiation()
+    about_operators.example_floor_division()
 
 def main():
     logging.info('This is entry point')
