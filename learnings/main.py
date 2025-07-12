@@ -7,6 +7,7 @@ import about_iterators
 import about_static
 import about_class_members
 import about_strings
+import about_operators
 
 logging.basicConfig(
     level=logging.INFO,
@@ -63,6 +64,9 @@ def about_class_members_method_calls():
 def about_strings_method_calls():
     about_strings.example_string_multiplication()
 
+def about_operators_method_calls():
+    about_operators.example_exponentiation()
+
 def main():
     logging.info('This is entry point')
     # about_pointers_method_calls()
@@ -73,6 +77,7 @@ def main():
     # about_static_method_calls()
     # about_class_members_method_calls()
     # about_strings_method_calls()
+    # about_operators_method_calls()
 
 if __name__ == '__main__':
     main()
