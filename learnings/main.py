@@ -63,6 +63,7 @@ def about_class_members_method_calls():
 
 def about_strings_method_calls():
     about_strings.example_string_multiplication()
+    about_strings.example_f_string()
 
 def about_operators_method_calls():
     about_operators.example_exponentiation()
