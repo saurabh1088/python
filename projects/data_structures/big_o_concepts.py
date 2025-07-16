@@ -27,3 +27,15 @@ def example_big_o_one():
     end_time = time.time()
     elapsed_time = end_time - start_time
     print(f"Execution Time: {elapsed_time:.6f} seconds")
+
+def example_big_o_n():
+    start_time = time.time()
+
+    large_list = list(range(10_000_000))
+    for number in large_list:
+        print(number)
+
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    print(f"Execution Time: {elapsed_time:.6f} seconds")
+
