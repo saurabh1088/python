@@ -1,5 +1,16 @@
 import random
 import time
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler("debug.log"),
+        logging.StreamHandler()
+    ]
+)
+
 
 def example_one(n):
     for i in range(n):
@@ -18,6 +29,7 @@ def example_three(n):
             print(i,j)
 
 def example_big_o_one():
+    logging.info('--- Executing example_big_o_one ---')
     start_time = time.time()
 
     large_list = list(range(10_000_000))
@@ -26,9 +38,11 @@ def example_big_o_one():
 
     end_time = time.time()
     elapsed_time = end_time - start_time
-    print(f"Execution Time: {elapsed_time:.6f} seconds")
+    logging.info(f"Execution Time: {elapsed_time:.6f} seconds")
+    logging.info('----------------------------------------------')
 
 def example_big_o_n():
+    logging.info('--- Executing example_big_o_n ---')
     start_time = time.time()
 
     large_list = list(range(10_000_000))
@@ -37,5 +51,21 @@ def example_big_o_n():
 
     end_time = time.time()
     elapsed_time = end_time - start_time
-    print(f"Execution Time: {elapsed_time:.6f} seconds")
+    logging.info(f"Execution Time: {elapsed_time:.6f} seconds")
+    logging.info('----------------------------------------------')
+
+def example_big_o_n_square():
+    logging.info('--- Executing example_big_o_n_square ---')
+    start_time = time.time()
+
+    large_list = list(range(1000))
+    for i in large_list:
+        for j in large_list:
+            print(i,j)
+
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    logging.info(f"Execution Time: {elapsed_time:.6f} seconds")
+    logging.info('----------------------------------------------')
+
 
