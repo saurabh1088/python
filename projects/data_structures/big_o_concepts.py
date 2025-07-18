@@ -68,4 +68,4 @@ def example_big_o_n_square():
     logging.info(f"Execution Time: {elapsed_time:.6f} seconds")
     logging.info('----------------------------------------------')
 
-
+# For log(n) add a binary search example.
