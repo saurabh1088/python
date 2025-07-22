@@ -8,6 +8,7 @@ import about_static
 import about_class_members
 import about_strings
 import about_operators
+import about_dictionaries
 
 logging.basicConfig(
     level=logging.INFO,
@@ -72,6 +73,9 @@ def about_operators_method_calls():
     about_operators.example_without_using_walrus_operator()
     about_operators.example_using_walrus_operator()
 
+def about_dictionaries_method_calls():
+    about_dictionaries.example_dictionary_creation_literal()
+
 def main():
     logging.info('This is entry point')
     # about_pointers_method_calls()
@@ -83,6 +87,7 @@ def main():
     # about_class_members_method_calls()
     # about_strings_method_calls()
     # about_operators_method_calls()
+    about_dictionaries_method_calls()
 
 if __name__ == '__main__':
     main()
