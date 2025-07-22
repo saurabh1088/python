@@ -75,6 +75,7 @@ def about_operators_method_calls():
 
 def about_dictionaries_method_calls():
     about_dictionaries.example_dictionary_creation_literal()
+    about_dictionaries.example_dictionary_creation_constructor()
 
 def main():
     logging.info('This is entry point')
@@ -87,7 +88,7 @@ def main():
     # about_class_members_method_calls()
     # about_strings_method_calls()
     # about_operators_method_calls()
-    about_dictionaries_method_calls()
+    # about_dictionaries_method_calls()
 
 if __name__ == '__main__':
     main()
