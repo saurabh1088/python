@@ -39,3 +39,9 @@ def example_dictionary_order():
         logging.info(f"key: {key}, value: {value}")
 
     logging.info('----------------------------------------------')
+
+def example_dictionary_comprehension():
+    logging.info('--- Executing example_dictionary_comprehension ---')
+    squares = {x: x ** 2 for x in range(1, 11)}
+    logging.info(f"Dictionary comprehension (squares): {squares}")
+    logging.info('----------------------------------------------')
