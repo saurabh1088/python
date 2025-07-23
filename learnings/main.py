@@ -76,6 +76,7 @@ def about_operators_method_calls():
 def about_dictionaries_method_calls():
     about_dictionaries.example_dictionary_creation_literal()
     about_dictionaries.example_dictionary_creation_constructor()
+    about_dictionaries.example_dictionary_order()
 
 def main():
     logging.info('This is entry point')
