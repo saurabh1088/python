@@ -50,6 +50,16 @@ def example_dictionary_get_method():
     logging.info('--- Executing example_dictionary_get_method ---')
     simple_dictionary = {"name": "Batman", "age": 25, "power": "Rich"}
     logging.info(f'Who am I? : Because I am {simple_dictionary.get("name")}')
+
+    # Accessing a key which isn't present in dictionary using [] notation will throw KeyError
+    logging.info('Accessing key which is not in the dictionary')
+    try:
+        key_not_there = simple_dictionary["key_not_there"]
+    except KeyError as e:
+        logging.error(f"KeyError: {e}")
+        logging.info('It seems that the key is not in the dictionary')
+        logging.info('Better to use get() instead to avoid this error')
+
     logging.info(f'Accessing key which is not there : {simple_dictionary.get("key_not_there")}')
     logging.info('----------------------------------------------')
 
