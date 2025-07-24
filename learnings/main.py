@@ -78,6 +78,7 @@ def about_dictionaries_method_calls():
     about_dictionaries.example_dictionary_creation_constructor()
     about_dictionaries.example_dictionary_order()
     about_dictionaries.example_dictionary_comprehension()
+    about_dictionaries.example_dictionary_get_method()
 
 def main():
     logging.info('This is entry point')

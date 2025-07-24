@@ -45,3 +45,11 @@ def example_dictionary_comprehension():
     squares = {x: x ** 2 for x in range(1, 11)}
     logging.info(f"Dictionary comprehension (squares): {squares}")
     logging.info('----------------------------------------------')
+
+def example_dictionary_get_method():
+    logging.info('--- Executing example_dictionary_get_method ---')
+    simple_dictionary = {"name": "Batman", "age": 25, "power": "Rich"}
+    logging.info(f'Who am I? : Because I am {simple_dictionary.get("name")}')
+    logging.info(f'Accessing key which is not there : {simple_dictionary.get("key_not_there")}')
+    logging.info('----------------------------------------------')
+
