@@ -9,6 +9,7 @@ import about_class_members
 import about_strings
 import about_operators
 import about_dictionaries
+import about_mutability
 
 logging.basicConfig(
     level=logging.INFO,
@@ -80,6 +81,9 @@ def about_dictionaries_method_calls():
     about_dictionaries.example_dictionary_comprehension()
     about_dictionaries.example_dictionary_get_method()
 
+def about_mutability_method_calls():
+    about_mutability.example_immutable_type_int()
+
 def main():
     logging.info('This is entry point')
     # about_pointers_method_calls()
@@ -92,6 +96,7 @@ def main():
     # about_strings_method_calls()
     # about_operators_method_calls()
     # about_dictionaries_method_calls()
+    # about_mutability_method_calls()
 
 if __name__ == '__main__':
     main()
