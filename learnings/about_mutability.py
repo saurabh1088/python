@@ -10,6 +10,18 @@ logging.basicConfig(
 )
 
 def example_immutable_new_variable_assignment_type_int():
+    """
+    Demonstrates the behavior of variable assignment with immutable types (integers) in Python.
+
+    This function logs the following steps:
+    - Assigns an integer value to variable `x` and logs its value and identity (memory address).
+    - Assigns `x` to a new variable `y` and logs `y`'s value and identity.
+    - Checks and logs if both variables share the same identity and value.
+
+    Key Concept:
+    In Python, integers are immutable objects. Assigning one variable to another (e.g., `y = x`) does not create a new object;
+    both variables reference the same integer object in memory. This is verified by comparing their identities using the `id()` function.
+    """
     logging.info('--- Executing example_immutable_type_int ---')
     x = 10
     logging.info(f"x value: {x}")
