@@ -83,6 +83,7 @@ def about_dictionaries_method_calls():
 
 def about_mutability_method_calls():
     about_mutability.example_immutable_new_variable_assignment_type_int()
+    about_mutability.example_immutable_modify_variable_type_int()
 
 def main():
     logging.info('This is entry point')
