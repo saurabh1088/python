@@ -9,6 +9,26 @@ logging.basicConfig(
     ]
 )
 
+# |---------------------------------------------------------------------------------------------------------------------------------------------|
+# | **Category**       | **Data Type**         | **Mutable?**        | **Notes**                                                                |
+# |--------------------|-----------------------|---------------------|--------------------------------------------------------------------------|
+# | **Numeric Types**  | `int`                 | ❌ Immutable        | Integers are immutable. Any arithmetic creates a new object.             |
+# |                    | `float`               | ❌ Immutable        | Same as `int`; floating-point numbers cannot be modified in place.       |
+# |                    | `complex`             | ❌ Immutable        | Complex numbers are immutable.                                           |
+# | **Sequence Types** | `str`                 | ❌ Immutable        | Strings cannot be modified; concatenation creates a new string.          |
+# |                    | `tuple`               | ❌ Immutable        | Tuples cannot be modified once created.                                  |
+# |                    | `list`                | ✅ Mutable          | Lists allow in-place modifications (e.g., append, pop, slice assignment).|
+# |                    | `range`               | ❌ Immutable        | Range objects are fixed after creation.                                  |
+# | **Set Types**      | `set`                 | ✅ Mutable          | Supports adding/removing elements.                                       |
+# |                    | `frozenset`           | ❌ Immutable        | Immutable version of `set`.                                              |
+# | **Mapping Type**   | `dict`                | ✅ Mutable          | Key-value pairs can be added/removed/updated.                            |
+# | **Boolean Type**   | `bool`                | ❌ Immutable        | Boolean values (`True`, `False`) are singletons and immutable.           |
+# | **Binary Types**   | `bytes`               | ❌ Immutable        | Similar to strings, immutable sequence of bytes.                         |
+# |                    | `bytearray`           | ✅ Mutable          | Mutable sequence of bytes.                                               |
+# |                    | `memoryview`          | ✅ Mutable          | Can modify the underlying object if it’s mutable.                        |
+# | **None Type**      | `NoneType`            | ❌ Immutable        | Only one instance `None`.                                                |
+# |---------------------------------------------------------------------------------------------------------------------------------------------|
+
 def example_immutable_new_variable_assignment_type_int():
     """
     Demonstrates the behavior of variable assignment with immutable types (integers) in Python.
@@ -56,3 +76,5 @@ def example_immutable_modify_variable_type_int():
     logging.info(f"x identity: {id(x)}")
     logging.info(f'Identity of x before and after modifying value is changed')
     logging.info('----------------------------------------------')
+
+    
