@@ -9,7 +9,7 @@ logging.basicConfig(
     ]
 )
 
-def example_immutable_type_int():
+def example_immutable_new_variable_assignment_type_int():
     logging.info('--- Executing example_immutable_type_int ---')
     x = 10
     logging.info(f"x value: {x}")
