@@ -9,6 +9,9 @@ logging.basicConfig(
     ]
 )
 
+# --------------------------------------------------------------------------------
+# --- Mutable/Immutable data types in Python ---
+
 # |---------------------------------------------------------------------------------------------------------------------------------------------|
 # | **Category**       | **Data Type**         | **Mutable?**        | **Notes**                                                                |
 # |--------------------|-----------------------|---------------------|--------------------------------------------------------------------------|
@@ -28,6 +31,10 @@ logging.basicConfig(
 # |                    | `memoryview`          | ✅ Mutable          | Can modify the underlying object if it’s mutable.                        |
 # | **None Type**      | `NoneType`            | ❌ Immutable        | Only one instance `None`.                                                |
 # |---------------------------------------------------------------------------------------------------------------------------------------------|
+
+
+# --------------------------------------------------------------------------------
+# --- Immutable types examples ---
 
 def example_immutable_new_variable_assignment_type_int():
     """
@@ -77,4 +84,6 @@ def example_immutable_modify_variable_type_int():
     logging.info(f'Identity of x before and after modifying value is changed')
     logging.info('----------------------------------------------')
 
-    
+
+# --------------------------------------------------------------------------------
+# --- Mutable types examples ---
