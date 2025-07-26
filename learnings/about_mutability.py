@@ -88,6 +88,32 @@ def example_immutable_modify_variable_type_int():
 # --------------------------------------------------------------------------------
 # --- Mutable types examples ---
 def example_mutable_new_variable_assignment_type_list():
+    """
+        Demonstrates variable assignment behavior with mutable objects (specifically lists) in Python.
+
+        In Python, variables are references to objects in memory. When a mutable object
+        (e.g., a list) is assigned to another variable using the assignment operator `=`,
+        both variables reference the same object. As a result, modifications made through
+        one variable will affect the other since they share the same memory address.
+
+        Steps:
+            1. Create a list `list_a` and log its value and identity (memory address).
+            2. Assign `list_a` to another variable `list_b`.
+            3. Log the value and identity of `list_b`.
+            4. Confirm that `list_a` and `list_b` refer to the same object by comparing
+               their identities using the `id()` function.
+            5. Log a message if both identity and value are equal.
+
+        Key Takeaways:
+            - Assignment of a mutable object to another variable does not create a copy.
+            - Both variables share the same memory reference.
+            - To create an independent copy, use `list.copy()` or `copy.deepcopy()`.
+
+        Analogy:
+            Think of `list_a` as a shared Google Doc. Assigning `list_a` to `list_b` is
+            like sharing the same document link. Both `list_a` and `list_b` can modify
+            the same content because they reference the same document (object).
+    """
     logging.info('--- Executing example_mutable_new_variable_assignment_type_list ---')
     list_a = [1, 2, 3, 4, 5]
     logging.info(f"list_a value: {list_a}")
