@@ -87,3 +87,17 @@ def example_immutable_modify_variable_type_int():
 
 # --------------------------------------------------------------------------------
 # --- Mutable types examples ---
+def example_mutable_new_variable_assignment_type_list():
+    logging.info('--- Executing example_mutable_new_variable_assignment_type_list ---')
+    list_a = [1, 2, 3, 4, 5]
+    logging.info(f"list_a value: {list_a}")
+    logging.info(f"list_a identity: {id(list_a)}")
+    logging.info(f'Assigning list_a to new variable list_b')
+    list_b = list_a
+    logging.info(f"list_b value: {list_b}")
+    logging.info(f"list_b identity: {id(list_b)}")
+    if id(list_a) == id(list_b):
+        if list_a == list_b:
+            logging.info("list_a and list_b are having equal identity and value")
+    logging.info('----------------------------------------------')
+
