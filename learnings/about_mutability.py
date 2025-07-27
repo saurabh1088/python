@@ -128,15 +128,47 @@ def example_mutable_new_variable_assignment_type_list():
     logging.info('----------------------------------------------')
 
 def example_mutable_modify_variable_type_list():
+    """
+        Demonstrates the mutability of lists in Python by modifying elements
+        without changing the object's identity.
+
+        In Python, lists are mutable objects, meaning their contents can be
+        changed in place (e.g., adding, removing, or modifying elements)
+        without creating a new object in memory. The object's identity
+        (as returned by the `id()` function) remains the same before and
+        after modification.
+
+        Steps:
+            1. Create a list `list_a` and log its initial value and identity.
+            2. Modify an element of `list_a` in place (e.g., changing the first element).
+            3. Log the updated value of `list_a`.
+            4. Confirm that the identity of `list_a` remains unchanged.
+
+        Key Takeaways:
+            - Lists are mutable, and modifying their contents does not affect
+              their memory reference.
+            - This behavior is different from immutable types like `int` or `str`,
+              where any modification results in a new object being created.
+
+        Analogy:
+            Think of a list as a whiteboard. Changing an element in the list
+            is like erasing a number on the whiteboard and writing a new one —
+            the whiteboard (object) itself stays the same.
+    """
     logging.info('--- Executing example_mutable_modify_variable_type_list ---')
     list_a = [1, 2, 3, 4, 5]
+    id_before = id(list_a)
     logging.info(f"list_a value: {list_a}")
     logging.info(f"list_a identity: {id(list_a)}")
     logging.info(f'Modifying some element of list_a')
     list_a[0] = -1
+    id_after = id(list_a)
     logging.info(f"list_a value: {list_a}")
     logging.info(f"list_a identity: {id(list_a)}")
-    logging.info(f'Identity of list_a before and after modifying value is not changed')
+    if id_before == id_after:
+        logging.info(f'Identity of list_a before and after modifying value is not changed')
+    else:
+        logging.warning('The identity of list_a changed, which should not happen for mutable objects!')
     logging.info('----------------------------------------------')
 
 
