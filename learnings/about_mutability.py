@@ -127,3 +127,16 @@ def example_mutable_new_variable_assignment_type_list():
             logging.info("list_a and list_b are having equal identity and value")
     logging.info('----------------------------------------------')
 
+def example_mutable_modify_variable_type_list():
+    logging.info('--- Executing example_mutable_modify_variable_type_list ---')
+    list_a = [1, 2, 3, 4, 5]
+    logging.info(f"list_a value: {list_a}")
+    logging.info(f"list_a identity: {id(list_a)}")
+    logging.info(f'Modifying some element of list_a')
+    list_a[0] = -1
+    logging.info(f"list_a value: {list_a}")
+    logging.info(f"list_a identity: {id(list_a)}")
+    logging.info(f'Identity of list_a before and after modifying value is not changed')
+    logging.info('----------------------------------------------')
+
+
