@@ -52,6 +52,14 @@ def example_lists_mutability():
 
     logging.info('----------------------------------------------')
 
+def example_lists_comprehension():
+    logging.info('--- Executing example_lists_comprehension ---')
+    list_using_comprehension = [x**2 for x in range(10)]
+    list_using_comprehension_and_filter = [x**2 for x in range(20) if x % 2 == 0]
+    logging.info(f'list_using_comprehension = {list_using_comprehension}')
+    logging.info(f'list_using_comprehension_and_filter = {list_using_comprehension_and_filter}')
+    logging.info('----------------------------------------------')
+
 
 # --------------------------------------------------------------------------------
 # --- Entry point ---
@@ -60,6 +68,7 @@ def main():
     logging.info('This is entry point for lists examples')
     example_lists_simple_concepts()
     example_lists_mutability()
+    example_lists_comprehension()
 
 
 if __name__ == '__main__':
