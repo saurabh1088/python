@@ -62,6 +62,18 @@ def example_lists_comprehension():
 
 
 # --------------------------------------------------------------------------------
+# --- Challenge ---
+
+# Write a list comprehension to extract all vowels from the string "Python is amazing!".
+def challenge_lists_comprehension_and_filter():
+    logging.info('--- Executing challenge_lists_comprehension_and_filter ---')
+    vowels = [character for character in "Python is amazing!" if character.lower() not in 'aeiou']
+    logging.info(f'vowels = {vowels}')
+    logging.info('----------------------------------------------')
+
+
+
+# --------------------------------------------------------------------------------
 # --- Entry point ---
 
 def main():
@@ -69,6 +81,7 @@ def main():
     example_lists_simple_concepts()
     example_lists_mutability()
     example_lists_comprehension()
+    challenge_lists_comprehension_and_filter()
 
 
 if __name__ == '__main__':
