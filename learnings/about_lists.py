@@ -17,8 +17,10 @@ def example_lists_simple_concepts():
     logging.info('Creating a simple list')
     simple_list_numbers = [1, 2, 3]
     simple_list_strings = ['Batman', 'Superman', 'Wonder Woman']
+    simple_list_mixed_types = [1, 1.0, 'Iron Man', 200, simple_list_numbers]
     logging.info(f'simple_list_numbers = {simple_list_numbers}')
     logging.info(f'simple_list_strings = {simple_list_strings}')
+    logging.info(f'simple_list_mixed_types = {simple_list_mixed_types}')
     logging.info('----------------------------------------------')
 
 
