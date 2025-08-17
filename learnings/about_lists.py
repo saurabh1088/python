@@ -92,6 +92,7 @@ def challenge_fibonacci_sequence(n=10):
     fib_list = [0, 1]
 
     # Generate the sequence by appending the sum of the last two elements
+    # Here fib_list[-1] is the most recent number; fib_list[-2] is the second most recent.
     while len(fib_list) < n:
         next_fib = fib_list[-1] + fib_list[-2]
         fib_list.append(next_fib)
