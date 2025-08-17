@@ -75,10 +75,34 @@ def example_lists_negative_indexes():
 
 # Write a list comprehension to extract all vowels from the string "Python is amazing!".
 def challenge_lists_comprehension_and_filter():
+    """
+    Demonstrates the use of list comprehensions combined with filtering in Python.
+
+    This function constructs a list of characters from the string
+    `"Python is amazing!"` by excluding all vowels (both uppercase and lowercase).
+    The result is logged for inspection.
+
+    The steps are:
+        1. Iterate over each character in the string.
+        2. Convert the character to lowercase.
+        3. Exclude it if it is one of 'a', 'e', 'i', 'o', or 'u'.
+        4. Collect the remaining characters into a list.
+
+    Logging:
+        Logs the start and end of execution, as well as the filtered list.
+
+    Returns:
+        List[str]: A list of characters from the string without vowels.
+
+    Example:
+        challenge_lists_comprehension_and_filter()
+        ['P', 'y', 't', 'h', 'n', ' ', 's', ' ', 'm', 'z', 'n', 'g', '!']
+    """
     logging.info('--- Executing challenge_lists_comprehension_and_filter ---')
     vowels = [character for character in "Python is amazing!" if character.lower() not in 'aeiou']
     logging.info(f'vowels = {vowels}')
     logging.info('----------------------------------------------')
+
 
 # Generate Fibonacci sequence using lists
 def challenge_fibonacci_sequence(n=10):
@@ -110,7 +134,6 @@ def challenge_fibonacci_sequence(n=10):
     logging.info('----------------------------------------------')
 
     return fib_list
-
 
 
 # --------------------------------------------------------------------------------
