@@ -71,6 +71,36 @@ def challenge_lists_comprehension_and_filter():
     logging.info(f'vowels = {vowels}')
     logging.info('----------------------------------------------')
 
+# Generate Fibonacci sequence using lists
+def challenge_fibonacci_sequence(n=10):
+    """
+    Generates the Fibonacci sequence up to n elements using a list.
+
+    The sequence starts with 0 and 1, and each subsequent number is the
+    sum of the two preceding ones.
+
+    Args:
+        n (int): The number of elements to generate in the sequence.
+                 Defaults to 10.
+    """
+    logging.info('--- Executing challenge_fibonacci_sequence ---')
+
+    if n <= 0:
+        logging.info("Please provide a positive number of elements.")
+        return []
+
+    fib_list = [0, 1]
+
+    # Generate the sequence by appending the sum of the last two elements
+    while len(fib_list) < n:
+        next_fib = fib_list[-1] + fib_list[-2]
+        fib_list.append(next_fib)
+
+    logging.info(f'Fibonacci sequence up to {n} elements: {fib_list}')
+    logging.info('----------------------------------------------')
+
+    return fib_list
+
 
 
 # --------------------------------------------------------------------------------
@@ -82,6 +112,7 @@ def main():
     example_lists_mutability()
     example_lists_comprehension()
     challenge_lists_comprehension_and_filter()
+    challenge_fibonacci_sequence()
 
 
 if __name__ == '__main__':
