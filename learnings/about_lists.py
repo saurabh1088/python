@@ -60,6 +60,15 @@ def example_lists_comprehension():
     logging.info(f'list_using_comprehension_and_filter = {list_using_comprehension_and_filter}')
     logging.info('----------------------------------------------')
 
+def example_lists_negative_indexes():
+    logging.info('--- Executing example_lists_negative_indexes ---')
+    some_list = ['Zeroth' , 'First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth', 'Seventh', 'Eighth', 'Ninth']
+    for index, value in enumerate(some_list):
+        logging.info(f'some_list[{index}] = {some_list[index]}')
+    for index, value in enumerate(some_list):
+        index = index + 1
+        logging.info(f'some_list[-{index}] = {some_list[-index]}')
+    logging.info('----------------------------------------------')
 
 # --------------------------------------------------------------------------------
 # --- Challenge ---
@@ -114,6 +123,7 @@ def main():
     example_lists_comprehension()
     challenge_lists_comprehension_and_filter()
     challenge_fibonacci_sequence()
+    example_lists_negative_indexes()
 
 
 if __name__ == '__main__':
