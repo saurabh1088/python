@@ -25,6 +25,22 @@ def index():
     """
     return "Hello, Flask!"
 
+
+# The `@app.route('/html')` decorator associates the `html` function with the URL '/html'.
+# This means when a user visits the /html endpoint, this function will run.
+@app.route('/html')
+def html():
+    """
+    Handles the /html URL route.
+
+    Returns:
+        A rich HTML string to be rendered in the user's browser.
+        Flask's default content type is HTML, so it automatically renders the string as a web page.
+    """
+    return """
+    <p style="font-family: 'Georgia', serif; font-size: 1.5em; color: #333; text-shadow: 2px 2px 4px #aaa; text-align: center;"><strong>🎉 Hello, Flask! This is a rich HTML string. Served by Flask ✨</strong></p>
+    """
+
 # This block ensures the web server only starts when you run the script directly.
 # It is a standard Python practice. `debug=True` provides helpful error messages
 # and automatically reloads the server on code changes.
