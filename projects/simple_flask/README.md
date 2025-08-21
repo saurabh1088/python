@@ -4,7 +4,11 @@ A minimal Flask project to get started with web development in Python.
 
 ---
 
-## 📂 Step 1: Create Project Folder
+## Steps to create project
+
+---
+
+### 📂 Step 1: Create Project Folder
 
 ```bash
 mkdir simple_flask
@@ -13,7 +17,7 @@ cd simple_flask
 
 ---
 
-## 🐍 Step 2: Set Up Virtual Environment
+### 🐍 Step 2: Set Up Virtual Environment
 
 A **virtual environment** keeps project dependencies isolated from the global Python installation.
 
@@ -29,7 +33,7 @@ source venv/bin/activate
 
 ---
 
-## 📦 Step 3: Install Flask
+### 📦 Step 3: Install Flask
 
 ```bash
 pip install flask
@@ -37,7 +41,7 @@ pip install flask
 
 ---
 
-## 📄 Step 4 (Optional but Recommended): Freeze Dependencies
+### 📄 Step 4 (Optional but Recommended): Freeze Dependencies
 
 ```bash
 pip freeze > requirements.txt
@@ -52,7 +56,7 @@ pip freeze > requirements.txt
 
 ---
 
-## 📝 Step 5: Create Starter Flask App
+### 📝 Step 5: Create Starter Flask App
 
 Create a file **`app.py`** with the following code:
 
@@ -71,7 +75,7 @@ if __name__ == '__main__':
 
 ---
 
-## ▶️ Step 6: Run the App
+### ▶️ Step 6: Run the App
 
 Activate the virtual environment (if not already active):
 
@@ -90,3 +94,30 @@ Open it in browser to see app running 🎉.
 
 ---
 
+## Manage virtual environment
+
+---
+
+### How to deactivate virtual environment?
+
+```bash
+deactivate
+```
+
+---
+
+### How to run the project again?
+- As virtual environmet was already configure, one just need to activate it with
+below command
+
+```bash
+source venv/bin/activate
+```
+
+- Then run the project again
+
+```bash
+python app.py
+```
+
+---
