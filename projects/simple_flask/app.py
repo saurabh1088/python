@@ -41,6 +41,23 @@ def html():
     <p style="font-family: 'Georgia', serif; font-size: 1.5em; color: #333; text-shadow: 2px 2px 4px #aaa; text-align: center;"><strong>🎉 Hello, Flask! This is a rich HTML string. Served by Flask ✨</strong></p>
     """
 
+
+# The `@app.route('/user/<username>')` decorator defines a dynamic route.
+# The <username> part captures a value from the URL and passes it to the function.
+@app.route('/user/<username>')
+def user(username):
+    """
+    Handles the dynamic /user/<username> URL route.
+
+    Args:
+        username (str): The username captured from the URL.
+
+    Returns:
+        A personalized greeting that includes the username in an H1 heading.
+    """
+    return f"<h1>Hello, {username}!</h1>"
+
+
 # This block ensures the web server only starts when you run the script directly.
 # It is a standard Python practice. `debug=True` provides helpful error messages
 # and automatically reloads the server on code changes.
