@@ -89,6 +89,12 @@ Run the app:
 python app.py
 ```
 
+Also it can be run via flask command. Note --app is command option and following app is name of file app.py
+
+```bash
+flask --app app run
+```
+
 By default, Flask runs on **[http://127.0.0.1:5000/](http://127.0.0.1:5000/)**.
 Open it in browser to see app running 🎉.
 
