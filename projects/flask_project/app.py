@@ -8,6 +8,9 @@ home page, and runs the development server.
 # Import the Flask class from the flask module.
 # This class is the core of your web application.
 from flask import Flask
+# Import the render_template function from the flask module.
+# This function is used to render HTML templates stored in the 'templates' directory.
+from flask import render_template
 
 # Create an instance of the Flask class.
 # The `__name__` argument tells Flask where to look for resources like templates.
@@ -21,9 +24,9 @@ def index():
     Handles the root URL route.
 
     Returns:
-        A simple string "Hello, Flask!" to be displayed in the user's browser.
+        Renders and returns the 'index.html' template to be displayed in the user's browser.
     """
-    return "Hello, Flask!"
+    return render_template("index.html")
 
 
 # The `@app.route('/html')` decorator associates the `html` function with the URL '/html'.
