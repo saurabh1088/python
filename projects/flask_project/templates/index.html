@@ -7,10 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <div class="container">
+        <img src="static/images/home_page_icon.avif" alt="Welcome Image" class="header-img">
         <h1>Welcome to {{ app_name }}!</h1>
         <p>This is a rich HTML template rendered by Flask using the Jinja2 templating engine.</p>
         <div class="dynamic-content">
