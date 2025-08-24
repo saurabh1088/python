@@ -2,6 +2,20 @@
 
 ## TODOs
 
+- [ ] 1. Set up template rendering with Jinja2
+- [ ] 2. Add static files for CSS, JS, and images
+- [ ] 3. Handle forms and user input (GET/POST)
+- [ ] 4. Implement dynamic routes and URL parameters
+- [ ] 5. Add flash messages and redirects
+- [ ] 6. Organize code using Blueprints
+- [ ] 7. Connect to a database with SQLAlchemy
+- [ ] 8. Implement user authentication
+- [ ] 9. Build RESTful JSON API endpoints
+- [ ] 10. Add error handling and custom error pages
+- [ ] 11. Write automated tests for your app
+
+Check details below.
+
 ***
 
 ## **Step-by-Step Roadmap for Enhancing Your Flask App**
