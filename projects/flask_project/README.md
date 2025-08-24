@@ -18,12 +18,12 @@ Check details below.
 
 ***
 
-## **Step-by-Step Roadmap for Enhancing Your Flask App**
+## **Step-by-Step Task details roadmap for enhancing Flask App**
 
 ### 1. **Template Rendering (Dynamic HTML with Jinja2)**
 - **Goal:** Serve real HTML files, not just simple strings or hard-coded HTML.
 - **How:**  
-  - Create a `/templates` folder and move your HTML into `.html` files.
+  - Create a `/templates` folder and move HTML into `.html` files.
   - Use `render_template` to serve them:
     ```python
     from flask import render_template
@@ -33,7 +33,7 @@ Check details below.
     ```
 
 ### 2. **Static Files (CSS/JS/Images)**
-- **Goal:** Style your app and add interactivity.
+- **Goal:** Style the app and add interactivity.
 - **How:**  
   - Create a `/static` folder.
   - Add CSS (e.g., `style.css`) and link it from your templates:
