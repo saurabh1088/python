@@ -39,6 +39,17 @@ def index():
     return render_template("index.html", app_name="Hello Flask App!!!")
 
 
+@app.route('/form')
+def form():
+    """
+    Handles the /form URL route.
+
+    Returns:
+        Renders and returns the 'form.html' template to be displayed in the user's browser.
+    """
+    return render_template("form.html", form_name="Who's your Hero!")
+
+
 # The `@app.route('/html')` decorator associates the `html` function with the URL '/html'.
 # This means when a user visits the /html endpoint, this function will run.
 @app.route('/html')
