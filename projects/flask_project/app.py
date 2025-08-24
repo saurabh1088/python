@@ -31,7 +31,12 @@ def index():
     Returns:
         Renders and returns the 'index.html' template to be displayed in the user's browser.
     """
-    return render_template("index.html")
+    # Render the 'index.html' template and pass a variable to it.
+    # app_name is a variable that can be used within the HTML template.
+    # It can be any string one want to display on the page, just one has to use same name in the template.
+    # Here, we set it to "Hello Flask App!!!".
+    # The render_template function looks for the template in the 'templates' folder.
+    return render_template("index.html", app_name="Hello Flask App!!!")
 
 
 # The `@app.route('/html')` decorator associates the `html` function with the URL '/html'.
