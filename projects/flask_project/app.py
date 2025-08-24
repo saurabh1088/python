@@ -5,6 +5,7 @@ This module initializes a basic Flask app, defines a single route for the
 home page, and runs the development server.
 """
 
+# -------------------------------- Imports -------------------------------- #
 # Import the Flask class from the flask module.
 # This class is the core of your web application.
 from flask import Flask
@@ -12,10 +13,14 @@ from flask import Flask
 # This function is used to render HTML templates stored in the 'templates' directory.
 from flask import render_template
 
+
+# ---------------------------- Application Setup --------------------------- #
 # Create an instance of the Flask class.
 # The `__name__` argument tells Flask where to look for resources like templates.
 app = Flask(__name__)
 
+
+# ------------------------------ Route Definitions ------------------------- #
 # The `@app.route('/')` decorator associates the `index` function with the URL '/'.
 # This means when a user visits the root of your website, this function will run.
 @app.route('/')
@@ -61,6 +66,7 @@ def user(username):
     return f"<h1>Hello, {username}!</h1>"
 
 
+# ------------------------------ Run the App ------------------------------- #
 # This block ensures the web server only starts when you run the script directly.
 # It is a standard Python practice. `debug=True` provides helpful error messages
 # and automatically reloads the server on code changes.
