@@ -64,7 +64,7 @@ def hero_form_post():
     """
     username = request.args.get('username')
     superhero = request.args.get('superhero')
-    return render_template("form.html", form_name="Thanks for submitting your Hero!")
+    return render_template("success.html", user_name=username, hero_name=superhero)
 
 
 # ------------------------------ Run the App ------------------------------- #
