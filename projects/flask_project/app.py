@@ -57,7 +57,7 @@ def hero_form():
 @app.route('/hero-form-data', methods=['GET'])
 def hero_form_post():
     """
-    Handles the form submission from the /form URL route.
+    Handles the form submission from the /hero-form-data URL route.
 
     Returns:
         Renders and returns the 'form.html' template with a thank you message.
