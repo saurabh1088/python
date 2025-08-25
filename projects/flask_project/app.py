@@ -39,7 +39,8 @@ def index():
     return render_template("index.html", app_name="Hello Flask App!!!")
 
 
-@app.route('/form')
+# The `@app.route('/form')` decorator associates the `form` function with the URL '/form'.
+@app.route('/form', methods=['GET'])
 def form():
     """
     Handles the /form URL route.
@@ -48,38 +49,6 @@ def form():
         Renders and returns the 'form.html' template to be displayed in the user's browser.
     """
     return render_template("form.html", form_name="Who's your Hero!")
-
-
-# The `@app.route('/html')` decorator associates the `html` function with the URL '/html'.
-# This means when a user visits the /html endpoint, this function will run.
-@app.route('/html')
-def html():
-    """
-    Handles the /html URL route.
-
-    Returns:
-        A rich HTML string to be rendered in the user's browser.
-        Flask's default content type is HTML, so it automatically renders the string as a web page.
-    """
-    return """
-    <p style="font-family: 'Georgia', serif; font-size: 1.5em; color: #333; text-shadow: 2px 2px 4px #aaa; text-align: center;"><strong>🎉 Hello, Flask! This is a rich HTML string. Served by Flask ✨</strong></p>
-    """
-
-
-# The `@app.route('/user/<username>')` decorator defines a dynamic route.
-# The <username> part captures a value from the URL and passes it to the function.
-@app.route('/user/<username>')
-def user(username):
-    """
-    Handles the dynamic /user/<username> URL route.
-
-    Args:
-        username (str): The username captured from the URL.
-
-    Returns:
-        A personalized greeting that includes the username in an H1 heading.
-    """
-    return f"<h1>Hello, {username}!</h1>"
 
 
 # ------------------------------ Run the App ------------------------------- #
