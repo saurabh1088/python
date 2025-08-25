@@ -12,6 +12,9 @@ from flask import Flask
 # Import the render_template function from the flask module.
 # This function is used to render HTML templates stored in the 'templates' directory.
 from flask import render_template
+# Import the request object from the flask module.
+# This object is used to handle incoming request data.
+from flask import request
 
 
 # ---------------------------- Application Setup --------------------------- #
@@ -41,7 +44,7 @@ def index():
 
 # The `@app.route('/form')` decorator associates the `form` function with the URL '/form'.
 @app.route('/form', methods=['GET'])
-def form():
+def hero_form():
     """
     Handles the /form URL route.
 
@@ -49,6 +52,19 @@ def form():
         Renders and returns the 'form.html' template to be displayed in the user's browser.
     """
     return render_template("form.html", form_name="Who's your Hero!")
+
+
+@app.route('/hero-form-data', methods=['GET'])
+def hero_form_post():
+    """
+    Handles the form submission from the /form URL route.
+
+    Returns:
+        Renders and returns the 'form.html' template with a thank you message.
+    """
+    username = request.args.get('username')
+    superhero = request.args.get('superhero')
+    return render_template("form.html", form_name="Thanks for submitting your Hero!")
 
 
 # ------------------------------ Run the App ------------------------------- #
