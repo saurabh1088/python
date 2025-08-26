@@ -54,16 +54,20 @@ def hero_form():
     return render_template("form.html", form_name="Who's your Hero!")
 
 
-@app.route('/hero-form-data', methods=['GET'])
-def hero_form_post():
+@app.route('/hero-form-data', methods=['GET', 'POST'])
+def hero_form_data():
     """
     Handles the form submission from the /hero-form-data URL route.
 
     Returns:
         Renders and returns the 'form.html' template with a thank you message.
     """
-    username = request.args.get('username')
-    superhero = request.args.get('superhero')
+    if request.method == 'POST':
+        username = request.form.get('username')
+        superhero = request.form.get('superhero')
+    else:
+        username = request.args.get('username')
+        superhero = request.args.get('superhero')
 
     # Basic validation
     if not username or not superhero:
