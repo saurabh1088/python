@@ -8,28 +8,57 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .form-toggle { margin-bottom: 24px; text-align: center; }
+        .form-section { display: none; }
+        .form-section.active { display: block; }
+    </style>
+    <script>
+        function showForm(type) {
+            document.getElementById('get-form').classList.remove('active');
+            document.getElementById('post-form').classList.remove('active');
+            document.getElementById(type + '-form').classList.add('active');
+        }
+        window.onload = function() {
+            showForm('get');
+        };
+    </script>
 </head>
 <body>
     <div class="container">
         <img src="{{ url_for('static', filename='images/home_page_icon.avif') }}" alt="Form Image" class="header-img">
         <h1>{{ form_name }} - User Form</h1>
         <p>Please enter your details below:</p>
-        <form action="/hero-form-data" method="get" class="form" style="max-width: 400px; margin: 0 auto;">
-            <div class="form-group" style="display: flex; align-items: center; margin-bottom: 16px;">
-            <label for="name" style="flex: 1; text-align: left; margin-right: 16px;">Name:</label>
-            <input type="text" id="name" name="username" required style="flex: 2; width: 100%; box-sizing: border-box;">
-            </div>
-            <div class="form-group" style="display: flex; align-items: center; margin-bottom: 16px;">
-            <label for="superhero" style="flex: 1; text-align: left; margin-right: 16px;">Favourite Superhero:</label>
-            <input type="text" id="superhero" name="superhero" required style="flex: 2; width: 100%; box-sizing: border-box;">
-            </div>
-            <!--
-                NOTE:
-                - The form should be submitted using the <button type="submit"> inside the <form>, not an <a href="...">.
-                - The <a href="/hero-form-data" class="btn">Submit</a> just navigates to /hero-form-data without sending form data.
-            -->
-            <button type="submit" class="btn">Submit</button>
-        </form>
+        <div class="form-toggle">
+            <button type="button" onclick="showForm('get')">Use GET Form</button>
+            <button type="button" onclick="showForm('post')">Use POST Form</button>
+        </div>
+        <div id="get-form" class="form-section">
+            <form action="/hero-form-data" method="get" class="form" style="max-width: 400px; margin: 0 auto;">
+                <div class="form-group" style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="name-get" style="flex: 1; text-align: left; margin-right: 16px;">Name:</label>
+                    <input type="text" id="name-get" name="username" required style="flex: 2; width: 100%; box-sizing: border-box;">
+                </div>
+                <div class="form-group" style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="superhero-get" style="flex: 1; text-align: left; margin-right: 16px;">Favourite Superhero:</label>
+                    <input type="text" id="superhero-get" name="superhero" required style="flex: 2; width: 100%; box-sizing: border-box;">
+                </div>
+                <button type="submit" class="btn">Submit (GET)</button>
+            </form>
+        </div>
+        <div id="post-form" class="form-section">
+            <form action="/hero-form-data" method="post" class="form" style="max-width: 400px; margin: 0 auto;">
+                <div class="form-group" style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="name-post" style="flex: 1; text-align: left; margin-right: 16px;">Name:</label>
+                    <input type="text" id="name-post" name="username" required style="flex: 2; width: 100%; box-sizing: border-box;">
+                </div>
+                <div class="form-group" style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="superhero-post" style="flex: 1; text-align: left; margin-right: 16px;">Favourite Superhero:</label>
+                    <input type="text" id="superhero-post" name="superhero" required style="flex: 2; width: 100%; box-sizing: border-box;">
+                </div>
+                <button type="submit" class="btn">Submit (POST)</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
