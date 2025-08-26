@@ -4,7 +4,7 @@
 
 - [x] 1. Set up template rendering with Jinja2
 - [x] 2. Add static files for CSS, JS, and images
-- [ ] 3. Handle forms and user input (GET/POST)
+- [x] 3. Handle forms and user input (GET/POST)
 - [ ] 4. Implement dynamic routes and URL parameters
 - [ ] 5. Add flash messages and redirects
 - [ ] 6. Organize code using Blueprints

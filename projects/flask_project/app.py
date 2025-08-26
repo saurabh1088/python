@@ -62,6 +62,9 @@ def hero_form_data():
     Returns:
         Renders and returns the 'form.html' template with a thank you message.
     """
+    # Extract form data based on the request method
+    # If the request method is POST, form data is sent in the request body and accessed via request.form.
+    # If the request method is GET, form data is sent as URL query parameters and accessed via request.args.
     if request.method == 'POST':
         username = request.form.get('username')
         superhero = request.form.get('superhero')
