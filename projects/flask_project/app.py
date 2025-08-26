@@ -64,6 +64,14 @@ def hero_form_post():
     """
     username = request.args.get('username')
     superhero = request.args.get('superhero')
+
+    # Basic validation
+    if not username or not superhero:
+        error_message = "Both username and superhero are required."
+        return render_template("error.html", form_name="Who's your Hero!", error=error_message)
+    if len(username) < 3 or len(superhero) < 3:
+        error_message = "Both username and superhero must be at least 3 characters long."
+        return render_template("error.html", form_name="Who's your Hero!", error=error_message)
     return render_template("success.html", user_name=username, hero_name=superhero)
 
 
