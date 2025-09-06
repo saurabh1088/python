@@ -28,7 +28,7 @@ def fizz_bizz():
             logging.info(i)
     logging.info("FizzBuzz completed")
 
-def some_other_function():
+def reverse_string():
     value = 'saurabh'
     logging.info(f"Value is {value}")
 
@@ -38,11 +38,20 @@ def some_other_function():
         reversed_value = char + reversed_value
     logging.info(f"Reversed value is {reversed_value}")
 
+def some_method():
+    some_string = 'madam'
+    reverse_string = some_string[::-1]
+    if some_string == reverse_string:
+        logging.info(f"{some_string} is a palindrome")
+    else:
+        logging.info(f"{some_string} is not a palindrome")
+
 # --------------------------------------------------------------------------------
 # --- Main Functionality ---
 def main():
     logging.info("Application started")
-    some_other_function()
+    reverse_string()
+    some_method()
     logging.info("Application finished")
 
 
