@@ -28,12 +28,21 @@ def fizz_bizz():
             logging.info(i)
     logging.info("FizzBuzz completed")
 
+def some_other_function():
+    value = 'saurabh'
+    logging.info(f"Value is {value}")
+
+    # reversed_value = value[::-1]
+    reversed_value = ''
+    for char in value:
+        reversed_value = char + reversed_value
+    logging.info(f"Reversed value is {reversed_value}")
 
 # --------------------------------------------------------------------------------
 # --- Main Functionality ---
 def main():
     logging.info("Application started")
-    fizz_bizz()
+    some_other_function()
     logging.info("Application finished")
 
 
