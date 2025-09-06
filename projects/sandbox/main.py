@@ -44,12 +44,20 @@ def some_method(str):
     else:
         logging.info(f"{str} is not a palindrome")
 
+def some_method_with_several_params(first_name, last_name, age, address, phone_number):
+    logging.info(f"First Name: {first_name}")
+    logging.info(f"Last Name: {last_name}")
+    logging.info(f"Age: {age}")
+    logging.info(f"Address: {address}")
+    logging.info(f"Phone Number: {phone_number}")
+
 # --------------------------------------------------------------------------------
 # --- Main Functionality ---
 def main():
     logging.info("Application started")
     reverse_string('saurabh')
     some_method('madam')
+    some_method_with_several_params('Saurabh', 'Verma', 40, '123 Street', '123-456-7890')
     logging.info("Application finished")
 
 
