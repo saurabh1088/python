@@ -52,15 +52,13 @@ def some_method_with_several_params(first_name, last_name, age, address, phone_n
     logging.info(f"Phone Number: {phone_number}")
 
 def some_method_with_integer_param(value):
-    if value < 10:
-        logging.info(f"Sum is: {value}")
-    else:
-        value_str = str(value)
-        sum = 0
-        for char in value_str:
-            logging.info(f"Character: {char}")
-            sum += int(char)
-        logging.info(f"Sum of digits is: {sum}")
+    value_str = str(value)
+    sum = 0
+    for char in value_str:
+        logging.info(f"Character: {char}")
+        sum += int(char)
+    logging.info(f"Sum of digits is: {sum}")
+        
 
 # --------------------------------------------------------------------------------
 # --- Main Functionality ---
@@ -69,7 +67,7 @@ def main():
     reverse_string('saurabh')
     some_method('madam')
     some_method_with_several_params('Saurabh', 'Verma', 40, '123 Street', '123-456-7890')
-    some_method_with_integer_param(12345)
+    some_method_with_integer_param(9876543210)
     logging.info("Application finished")
 
 
