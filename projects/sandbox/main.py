@@ -58,6 +58,17 @@ def some_method_with_integer_param(value):
         logging.info(f"Character: {char}")
         sum += int(char)
     logging.info(f"Sum of digits is: {sum}")
+
+def character_frequency(str):
+    logging.info("Starting programming session three")
+    # Add your code here
+    some_dictionary = dict()
+    for char in str:
+        logging.info(f"Character: {char}")
+        some_dictionary[char] = some_dictionary.get(char, 0) + 1
+    logging.info(f"Character frequencies: {some_dictionary}")
+
+    logging.info("Programming session three completed")
         
 
 # --------------------------------------------------------------------------------
@@ -68,6 +79,7 @@ def main():
     some_method('madam')
     some_method_with_several_params('Saurabh', 'Verma', 40, '123 Street', '123-456-7890')
     some_method_with_integer_param(9876543210)
+    character_frequency('hello world')
     logging.info("Application finished")
 
 
