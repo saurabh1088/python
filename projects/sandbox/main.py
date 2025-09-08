@@ -75,6 +75,17 @@ def practice_session_one_8_september_2025(list_of_numbers):
     refined_list = [number for number in list_of_numbers if number % 2 == 0]
     logging.info(f"Refined list of even numbers: {refined_list}")
     logging.info("Practice session one completed")
+
+def practice_session_two_8_september_2025():
+    list_one = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    even = [number for number in list_one if number % 2 == 0]
+    logging.info(f"Even numbers: {even}")
+    odd = [number for number in list_one if number % 2 != 0]
+    logging.info(f"Odd numbers: {odd}")
+    two_times = [number*2 for number in list_one]
+    logging.info(f"Two times: {two_times}")
+    squares = [number*number for number in list_one]
+    logging.info(f"Squares: {squares}")
         
 
 # --------------------------------------------------------------------------------
@@ -87,6 +98,7 @@ def main():
     some_method_with_integer_param(9876543210)
     character_frequency('hello world')
     practice_session_one_8_september_2025([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    practice_session_two_8_september_2025()
     logging.info("Application finished")
 
 
