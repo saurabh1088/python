@@ -72,10 +72,7 @@ def character_frequency(str):
 
 def practice_session_one_8_september_2025(list_of_numbers):
     logging.info("Starting practice session one")
-    refined_list = []
-    for number in list_of_numbers:
-        if number % 2 == 0:
-            refined_list.append(number)
+    refined_list = [number for number in list_of_numbers if number % 2 == 0]
     logging.info(f"Refined list of even numbers: {refined_list}")
     logging.info("Practice session one completed")
         
