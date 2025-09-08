@@ -69,6 +69,15 @@ def character_frequency(str):
     logging.info(f"Character frequencies: {some_dictionary}")
 
     logging.info("Programming session three completed")
+
+def practice_session_one_8_september_2025(list_of_numbers):
+    logging.info("Starting practice session one")
+    refined_list = []
+    for number in list_of_numbers:
+        if number % 2 == 0:
+            refined_list.append(number)
+    logging.info(f"Refined list of even numbers: {refined_list}")
+    logging.info("Practice session one completed")
         
 
 # --------------------------------------------------------------------------------
@@ -80,6 +89,7 @@ def main():
     some_method_with_several_params('Saurabh', 'Verma', 40, '123 Street', '123-456-7890')
     some_method_with_integer_param(9876543210)
     character_frequency('hello world')
+    practice_session_one_8_september_2025([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     logging.info("Application finished")
 
 
