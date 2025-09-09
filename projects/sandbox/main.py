@@ -108,6 +108,17 @@ def practice_session_two_9_september_2025():
     result_two = 'Python' > 'python'
     logging.info(f"Is 'Python' greater than 'python'? {result_two}")
     logging.info("Practice session two - 9 September 2025 completed")
+
+def practice_session_three_9_september_2025():
+    logging.info("Starting practice session three - 9 September 2025")
+    for i in range(2, 5):
+        print(i, end='-')
+    some_list = list()
+    some_list.append(1)
+    some_list.append(2)
+    some_list.append(3)
+    logging.info(f"List contents: {some_list}")
+    logging.info("Practice session three - 9 September 2025 completed")
         
 
 # --------------------------------------------------------------------------------
@@ -122,6 +133,7 @@ def main():
     grab_even_from_list([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     practice_session_one_9_september_2025()
     practice_session_two_9_september_2025()
+    practice_session_three_9_september_2025()
     logging.info("Application finished")
 
 
