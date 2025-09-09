@@ -75,6 +75,27 @@ def grab_even_from_list(list_of_numbers):
     refined_list = [number for number in list_of_numbers if number % 2 == 0]
     logging.info(f"Refined list of even numbers: {refined_list}")
     logging.info("Practice session one completed")
+
+def practice_session_one_9_september_2025():
+    logging.info("Starting practice session one - 9 September 2025")
+    list_one = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    even_numbers = [number for number in list_one if number % 2 == 0]
+    logging.info(f"Even numbers from the list: {even_numbers}")
+    odd_numbers = [number for number in list_one if number % 2 != 0]
+    logging.info(f"Odd numbers from the list: {odd_numbers}")
+    logging.info("Practice session one - 9 September 2025 completed")
+    long_sentence = "This is a sample sentence for testing purposes, which contains several words."
+    long_words = [word for word in long_sentence.split() if len(word) > 3]
+    logging.info(f"Words longer than three characters: {long_words}")
+    two_dimensional_list = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+        [10, 11, 12]
+    ]
+    flattened_list = [number for sublist in two_dimensional_list for number in sublist]
+    logging.info(f"Flattened list: {flattened_list}")
+    logging.info("Practice session one - 9 September 2025 completed")
         
 
 # --------------------------------------------------------------------------------
@@ -87,6 +108,7 @@ def main():
     some_method_with_integer_param(9876543210)
     character_frequency('hello world')
     grab_even_from_list([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    practice_session_one_9_september_2025()
     logging.info("Application finished")
 
 
