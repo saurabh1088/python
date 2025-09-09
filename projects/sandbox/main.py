@@ -96,6 +96,18 @@ def practice_session_one_9_september_2025():
     flattened_list = [number for sublist in two_dimensional_list for number in sublist]
     logging.info(f"Flattened list: {flattened_list}")
     logging.info("Practice session one - 9 September 2025 completed")
+
+def practice_session_two_9_september_2025():
+    logging.info("Starting practice session two - 9 September 2025")
+    # Add your code here
+    x = 10
+    y = 3
+    result = x // y
+    logging.info(f"Result of integer division {x} // {y} is {result}")
+    # Lowercase vs Uppercase comparison, lowercase letters have higher ASCII values
+    result_two = 'Python' > 'python'
+    logging.info(f"Is 'Python' greater than 'python'? {result_two}")
+    logging.info("Practice session two - 9 September 2025 completed")
         
 
 # --------------------------------------------------------------------------------
@@ -109,6 +121,7 @@ def main():
     character_frequency('hello world')
     grab_even_from_list([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     practice_session_one_9_september_2025()
+    practice_session_two_9_september_2025()
     logging.info("Application finished")
 
 
