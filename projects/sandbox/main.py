@@ -132,14 +132,28 @@ def practice_session_one_10_september_2025():
     logging.info(f"Dictionary keys: {keys}")
     values = dictionary.values()
     logging.info(f"Dictionary values: {values}")
+    list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    reverse_list = list.reverse()
+    logging.info(f"Reversed list: {list}")
     logging.info("Practice session one - 10 September 2025 completed")
-        
+
+def practice_session_two_10_september_2025():
+    logging.info("Starting practice session two - 10 September 2025")
+    x = 5
+    y = 2
+    result = x ** y
+    logging.info(f"Result of {x} raised to the power of {y} is {result}")
+    some_string = "Hello, World!"
+    logging.info(f'Value at index 7 is: {some_string[7]}')
+    for i in range (2, 16, 2):
+        logging.info(f"Current value of i: {i}")
+    logging.info("Practice session two - 10 September 2025 completed")
 
 # --------------------------------------------------------------------------------
 # --- Main Functionality ---
 def main():
     logging.info("Application started")
-    practice_session_one_10_september_2025()
+    practice_session_two_10_september_2025()
     logging.info("Application finished")
 
 
