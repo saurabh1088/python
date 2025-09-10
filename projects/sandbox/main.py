@@ -119,21 +119,27 @@ def practice_session_three_9_september_2025():
     some_list.append(3)
     logging.info(f"List contents: {some_list}")
     logging.info("Practice session three - 9 September 2025 completed")
+
+def practice_session_one_10_september_2025():
+    logging.info("Starting practice session one - 10 September 2025")
+    dictionary = dict()
+    dictionary['a'] = 1
+    dictionary['b'] = 2
+    dictionary['c'] = 3
+    items = dictionary.items()
+    logging.info(f"Dictionary items: {items}")
+    keys = dictionary.keys()
+    logging.info(f"Dictionary keys: {keys}")
+    values = dictionary.values()
+    logging.info(f"Dictionary values: {values}")
+    logging.info("Practice session one - 10 September 2025 completed")
         
 
 # --------------------------------------------------------------------------------
 # --- Main Functionality ---
 def main():
     logging.info("Application started")
-    reverse_string('saurabh')
-    some_method('madam')
-    some_method_with_several_params('Saurabh', 'Verma', 40, '123 Street', '123-456-7890')
-    some_method_with_integer_param(9876543210)
-    character_frequency('hello world')
-    grab_even_from_list([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-    practice_session_one_9_september_2025()
-    practice_session_two_9_september_2025()
-    practice_session_three_9_september_2025()
+    practice_session_one_10_september_2025()
     logging.info("Application finished")
 
 
