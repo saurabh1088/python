@@ -149,11 +149,25 @@ def practice_session_two_10_september_2025():
         logging.info(f"Current value of i: {i}")
     logging.info("Practice session two - 10 September 2025 completed")
 
+def practice_session_one_20_september_2025():
+    logging.info("Starting practice session one - 20 September 2025")
+    list_of_vowels = ['a', 'e', 'i', 'o', 'u']
+    some_string = " This is an example string to test vowel extraction. "
+    trimmed_string = some_string.strip()
+    logging.info(f"Original string: '{some_string}'")
+    logging.info(f"Trimmed string: '{trimmed_string}'")
+    count_of_vowels = 0
+    for char in trimmed_string.lower():
+        if char in list_of_vowels:
+            count_of_vowels += 1
+    logging.info(f"Number of vowels in the string: {count_of_vowels}")
+    logging.info("Practice session one - 20 September 2025 completed")
+
 # --------------------------------------------------------------------------------
 # --- Main Functionality ---
 def main():
     logging.info("Application started")
-    practice_session_two_10_september_2025()
+    practice_session_one_20_september_2025()
     logging.info("Application finished")
 
 
