@@ -76,7 +76,7 @@ def grab_even_from_list(list_of_numbers):
     logging.info(f"Refined list of even numbers: {refined_list}")
     logging.info("Practice session one completed")
 
-def practice_session_one_9_september_2025():
+def list_and_string_practice_session():
     logging.info("Starting practice session one - 9 September 2025")
     list_one = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     even_numbers = [number for number in list_one if number % 2 == 0]
@@ -97,9 +97,8 @@ def practice_session_one_9_september_2025():
     logging.info(f"Flattened list: {flattened_list}")
     logging.info("Practice session one - 9 September 2025 completed")
 
-def practice_session_two_9_september_2025():
-    logging.info("Starting practice session two - 9 September 2025")
-    # Add your code here
+def integer_division_and_string_comparison():
+    logging.info("Starting integer division and string comparison session")
     x = 10
     y = 3
     result = x // y
@@ -107,9 +106,9 @@ def practice_session_two_9_september_2025():
     # Lowercase vs Uppercase comparison, lowercase letters have higher ASCII values
     result_two = 'Python' > 'python'
     logging.info(f"Is 'Python' greater than 'python'? {result_two}")
-    logging.info("Practice session two - 9 September 2025 completed")
+    logging.info("Integer division and string comparison session completed")
 
-def practice_session_three_9_september_2025():
+def list_and_range_practice_session():
     logging.info("Starting practice session three - 9 September 2025")
     for i in range(2, 5):
         print(i, end='-')
@@ -120,7 +119,7 @@ def practice_session_three_9_september_2025():
     logging.info(f"List contents: {some_list}")
     logging.info("Practice session three - 9 September 2025 completed")
 
-def practice_session_one_10_september_2025():
+def dictionary_and_list_practice_session():
     logging.info("Starting practice session one - 10 September 2025")
     dictionary = dict()
     dictionary['a'] = 1
@@ -137,7 +136,7 @@ def practice_session_one_10_september_2025():
     logging.info(f"Reversed list: {list}")
     logging.info("Practice session one - 10 September 2025 completed")
 
-def practice_session_two_10_september_2025():
+def power_and_string_index_practice():
     logging.info("Starting practice session two - 10 September 2025")
     x = 5
     y = 2
@@ -149,7 +148,7 @@ def practice_session_two_10_september_2025():
         logging.info(f"Current value of i: {i}")
     logging.info("Practice session two - 10 September 2025 completed")
 
-def practice_session_one_20_september_2025():
+def count_vowels_in_string():
     logging.info("Starting practice session one - 20 September 2025")
     list_of_vowels = ['a', 'e', 'i', 'o', 'u']
     some_string = " This is an example string to test vowel extraction. "
@@ -163,7 +162,7 @@ def practice_session_one_20_september_2025():
     logging.info(f"Number of vowels in the string: {count_of_vowels}")
     logging.info("Practice session one - 20 September 2025 completed")
 
-def practice_session_two_20_september_2025(list_of_strings):
+def count_vowels_in_list_of_strings(list_of_strings):
     logging.info("Starting practice session two - 20 September 2025")
     list_of_vowels = ['a', 'e', 'i', 'o', 'u']
     for string in list_of_strings:
@@ -175,7 +174,7 @@ def practice_session_two_20_september_2025(list_of_strings):
 
     logging.info("Practice session two - 20 September 2025 completed")
 
-def practice_session_three_20_september_2025():
+def count_vowels_with_logging():
     logging.info("Starting practice session three - 20 September 2025")
     vowels = 'aeiouAEIOU'
     some_string = " This is another example string to test vowel extraction. "
