@@ -163,11 +163,23 @@ def practice_session_one_20_september_2025():
     logging.info(f"Number of vowels in the string: {count_of_vowels}")
     logging.info("Practice session one - 20 September 2025 completed")
 
+def practice_session_two_20_september_2025(list_of_strings):
+    logging.info("Starting practice session two - 20 September 2025")
+    list_of_vowels = ['a', 'e', 'i', 'o', 'u']
+    for string in list_of_strings:
+        count = 0
+        for char in string.strip().lower():
+            if char in list_of_vowels:
+                count += 1
+        logging.info(f"String: '{string}' has {count} vowels")
+
+    logging.info("Practice session two - 20 September 2025 completed")
+
 # --------------------------------------------------------------------------------
 # --- Main Functionality ---
 def main():
     logging.info("Application started")
-    practice_session_one_20_september_2025()
+    practice_session_two_20_september_2025(["Hello World", "This is a test", "Python programming"])
     logging.info("Application finished")
 
 
