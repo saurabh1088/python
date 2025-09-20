@@ -189,11 +189,16 @@ def count_vowels_with_logging():
     logging.info(f"Total number of vowels in the string: {count}")
     logging.info("Practice session three - 20 September 2025 completed")
 
+
+# --------------------------------------------------------------------------------
+# --- Prompts ---
+# Suggest a more meaningful and descriptive name for the function based on its actual implementation details.
+
 # --------------------------------------------------------------------------------
 # --- Main Functionality ---
 def main():
     logging.info("Application started")
-    practice_session_three_20_september_2025()
+    count_vowels_with_logging()
     logging.info("Application finished")
 
 
