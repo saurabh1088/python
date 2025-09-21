@@ -31,7 +31,10 @@ class Bike(Vehicle):
 def example_vehicle():
     vehicle = Vehicle()
     print("Now this should raise exception")
-    print(vehicle.start_engine())
+    try:
+        print(vehicle.start_engine())
+    except NotImplementedError:
+        print("start_engine is called on base class")
     
 def example_car():
     car = Car()
