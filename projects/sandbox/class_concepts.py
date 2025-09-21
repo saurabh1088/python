@@ -33,13 +33,16 @@ def example_vehicle():
     print("Now this should raise exception")
     try:
         print(vehicle.start_engine())
-    except NotImplementedError:
-        print("start_engine is called on base class")
+    except NotImplementedError as e:
+        print("Successfully caught the exception!")
+        print(f"The exception object is: {e}")
+        print(f"The type of the exception is: {type(e)}")
+        print("start_engine is called on base class, when it should be called on some concrete implementation by sub-class")
     
 def example_car():
     car = Car()
     print(car.start_engine())
-    print(bike.stop_engine())
+    print(car.stop_engine())
     
 def example_bike():
     bike = Bike()
