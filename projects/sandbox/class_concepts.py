@@ -91,5 +91,22 @@ def can_instance_update_class_variable():
     print(f"Vehicle.class_variable : {Vehicle.class_variable}")
     print(f"vehicle.class_variable : {vehicle.class_variable}")
 
+def check_if_all_instance_member_get_new_instance_variable_when_class_variable_is_modified_via_instance():
+    print(f"Vehicle class variable : {Vehicle.class_variable}")
+    vehicle_instance = Vehicle()
+    car_instance = Car()
+    bike_instance = Bike()
+    print(f"Vehicle instance class variable : {vehicle_instance.class_variable}")
+    print(f"Car instance class variable : {car_instance.class_variable}")
+    print(f"Bike instance class variable : {bike_instance.class_variable}")
+    print("Now modifying class variable via vehicle instance")
+    vehicle_instance.class_variable = "I am modified class variable via vehicle instance"
+    print("After modifying class variable via vehicle instance")
+    print(f"Vehicle class variable : {Vehicle.class_variable}")
+    print(f"Vehicle instance class variable : {vehicle_instance.class_variable}")
+    print(f"Car instance class variable : {car_instance.class_variable}")
+    print(f"Bike instance class variable : {bike_instance.class_variable}")
+
+
 if __name__ == "__main__":
-    can_instance_update_class_variable()
+    check_if_all_instance_member_get_new_instance_variable_when_class_variable_is_modified_via_instance()
