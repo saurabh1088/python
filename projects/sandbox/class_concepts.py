@@ -107,6 +107,18 @@ def check_if_all_instance_member_get_new_instance_variable_when_class_variable_i
     print(f"Car instance class variable : {car_instance.class_variable}")
     print(f"Bike instance class variable : {bike_instance.class_variable}")
 
+def override_behaviour_for_class_variables_via_subclasses():
+    print(f"Present class variable in Vehicle class : {Vehicle.class_variable}")
+    print(f"Present class variable in Car class : {Car.class_variable}")
+    print(f"Present class variable in Bike class : {Bike.class_variable}")
+    print("Now overriding class variable in Car and Bike class")
+    Car.class_variable = "I am class variable defined in Car class"
+    Bike.class_variable = "I am class variable defined in Bike class"
+    print(f"After overriding class variable in Car and Bike class")
+    print(f"Present class variable in Vehicle class : {Vehicle.class_variable}")
+    print(f"Present class variable in Car class : {Car.class_variable}")
+    print(f"Present class variable in Bike class : {Bike.class_variable}")
+
 
 if __name__ == "__main__":
-    check_if_all_instance_member_get_new_instance_variable_when_class_variable_is_modified_via_instance()
+    override_behaviour_for_class_variables_via_subclasses()
