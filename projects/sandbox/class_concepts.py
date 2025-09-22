@@ -75,6 +75,21 @@ def instance_variables_playground():
     print(f"Car instance variable : {car.instance_variable}")
     print(f"Bike instance variable : {bike.instance_variable}")
 
+def can_instance_access_class_variable():
+    print(f"Vehicle class variable : {Vehicle.class_variable}")
+    vehicle = Vehicle()
+    print(f"Vehicle class variable accesses via instace : {vehicle.class_variable}")
+
+def can_instance_update_class_variable():
+    print(f"Vehicle class variable : {Vehicle.class_variable}")
+    vehicle = Vehicle()
+    vehicle.class_variable = "I am modified class variable via an instance"
+    print("After modifying class variable via instance")
+    print(f"Vehicle class variable : {Vehicle.class_variable}")
+    print(f"vehicle instance class variable : {vehicle.class_variable}")
+    print("This shows that instance cannot modify class variable, it creates a new instance variable with same name")
+    print(f"Vehicle.class_variable : {Vehicle.class_variable}")
+    print(f"vehicle.class_variable : {vehicle.class_variable}")
 
 if __name__ == "__main__":
-    instance_variables_playground()
+    can_instance_update_class_variable()
