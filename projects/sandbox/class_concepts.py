@@ -1,3 +1,5 @@
+import asyncio
+
 class Vehicle:
     class_variable = "I am class variable defined in Vehicle class"
     
@@ -119,6 +121,13 @@ def override_behaviour_for_class_variables_via_subclasses():
     print(f"Present class variable in Car class : {Car.class_variable}")
     print(f"Present class variable in Bike class : {Bike.class_variable}")
 
+async def an_async_function_showing_coroutine():
+    print("This is an async function")
+    print("Simulating some async work with asyncio.sleep")
+    print("Sleeping...")
+    await asyncio.sleep(10)
+    print("Waking up...")
+    print("Async function is done")
 
 if __name__ == "__main__":
-    override_behaviour_for_class_variables_via_subclasses()
+    asyncio.run(an_async_function_showing_coroutine())
