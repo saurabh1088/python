@@ -1,4 +1,15 @@
 import asyncio
+import logging
+
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler("debug.log"),
+        logging.StreamHandler()
+    ]
+)
 
 
 async def an_async_function_showing_coroutine():
@@ -17,27 +28,27 @@ async def an_async_function_showing_coroutine():
 
         asyncio.run(an_async_function_showing_coroutine())
     """
-    print("This is an async function")
-    print("Simulating some async work with asyncio.sleep")
-    print("Sleeping...")
+    logging.info("This is an async function")
+    logging.info("Simulating some async work with asyncio.sleep")
+    logging.info("Sleeping...")
     await asyncio.sleep(10)
-    print("Waking up...")
-    print("Async function is done")
+    logging.info("Waking up...")
+    logging.info("Async function is done")
 
 async def say_hello_to(person, delay=1):
-    print(f"Task for '{person}' started. Will wait for {delay} seconds, then will say hello.")
-    print(f"Hello, {person}!")
+    logging.info(f"Task for '{person}' started. Will wait for {delay} seconds, then will say hello.")
+    logging.info(f"Hello, {person}!")
     await asyncio.sleep(delay)
-    print(f"Goodbye, {person}!")
+    logging.info(f"Goodbye, {person}!")
 
 async def run_multiple_hello_tasks():
-    print("Starting concurrent tasks...")
+    logging.info("Starting concurrent tasks...")
     await asyncio.gather(
         say_hello_to("Alice", 2),
         say_hello_to("Bob", 3),
         say_hello_to("Charlie", 1)
     )
-    print("All tasks finished.")
+    logging.info("All tasks finished.")
 
 if __name__ == "__main__":
     asyncio.run(run_multiple_hello_tasks())
