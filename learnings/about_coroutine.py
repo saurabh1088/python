@@ -24,5 +24,20 @@ async def an_async_function_showing_coroutine():
     print("Waking up...")
     print("Async function is done")
 
+async def say_hello_to(person, delay=1):
+    print(f"Task for '{person}' started. Will wait for {delay} seconds, then will say hello.")
+    print(f"Hello, {person}!")
+    await asyncio.sleep(delay)
+    print(f"Goodbye, {person}!")
+
+async def run_multiple_hello_tasks():
+    print("Starting concurrent tasks...")
+    await asyncio.gather(
+        say_hello_to("Alice", 2),
+        say_hello_to("Bob", 3),
+        say_hello_to("Charlie", 1)
+    )
+    print("All tasks finished.")
+
 if __name__ == "__main__":
-    asyncio.run(an_async_function_showing_coroutine())
+    asyncio.run(run_multiple_hello_tasks())
