@@ -43,8 +43,10 @@ async def say_hello_to(person, delay=1):
 
 async def run_multiple_hello_tasks():
     logging.info("Starting concurrent tasks...")
+    # `asyncio.gather` runs the tasks concurrently. The event loop
+    # will not wait for one to finish before starting the next.
     await asyncio.gather(
-        say_hello_to("Alice", 2),
+        say_hello_to("Alice", 5),
         say_hello_to("Bob", 3),
         say_hello_to("Charlie", 1)
     )
