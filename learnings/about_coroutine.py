@@ -41,6 +41,14 @@ async def say_hello_to(person, delay=1):
     await asyncio.sleep(delay)
     logging.info(f"Goodbye, {person}!")
 
+async def say_hello_to_and_hear_back(person, delay=1):
+    logging.info(f"Task for '{person}' started. Will wait for {delay} seconds, then will say hello.")
+    greeting = f"Hello, {person}!"
+    logging.info(greeting)
+    await asyncio.sleep(delay)
+    logging.info(f"Task for '{person}' is done.")
+    return greeting
+
 async def run_multiple_hello_tasks():
     logging.info("Starting concurrent tasks...")
     # `asyncio.gather` runs the tasks concurrently. The event loop
@@ -52,5 +60,17 @@ async def run_multiple_hello_tasks():
     )
     logging.info("All tasks finished.")
 
+async def run_multiple_hello_and_hear_back_tasks():
+    logging.info("Starting concurrent tasks with return values...")
+    tasks = [
+        say_hello_to_and_hear_back("Alice", 5),
+        say_hello_to_and_hear_back("Bob", 3),
+        say_hello_to_and_hear_back("Charlie", 1)
+    ]
+    logging.info("All tasks finished.")
+    results = await asyncio.gather(*tasks)
+    for result in results:
+        logging.info(f"Greeting received: {result}")
+
 if __name__ == "__main__":
-    asyncio.run(run_multiple_hello_tasks())
+    asyncio.run(run_multiple_hello_and_hear_back_tasks())
