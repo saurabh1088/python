@@ -12,7 +12,9 @@ A Python project exploring various SQLite database concepts through concept-driv
 ```
 sqlite_playground/
 ├── src/                    # Python concept files
-│   └── basic_operations.py # Basic CRUD operations example
+│   ├── db_utils.py        # Utility module for database path management
+│   ├── create_database.py # Creates database and table structure
+│   └── insert_data.py     # Inserts sample data and queries records
 ├── database/               # SQLite database files
 │   └── mydb_v1.sqlite     # Database file (created automatically)
 └── README.md              # This file
@@ -21,9 +23,11 @@ sqlite_playground/
 ## What This Project Does
 
 This project demonstrates SQLite database concepts through multiple example files:
-- **basic_operations.py**: Demonstrates basic CRUD operations
+- **db_utils.py**: Utility module providing a helper function to get database paths
+- **create_database.py**: Creates the database file and defines the table schema
   - Creates a database file (`mydb_v1.sqlite`)
   - Creates an `employee` table with columns: `id`, `name`, `email`, and `designation`
+- **insert_data.py**: Inserts sample data and queries records
   - Inserts sample employee data
   - Queries and displays all employee records
 
@@ -34,19 +38,38 @@ This project demonstrates SQLite database concepts through multiple example file
    cd /Users/saurabhverma/DevBox/python/projects/sqlite_playground
    ```
 
-2. **Run a concept file:**
+2. **Create the database and table structure:**
    ```bash
-   python src/basic_operations.py
+   python src/create_database.py
    ```
-
+   
    Or if you're using Python 3 specifically:
    ```bash
-   python3 src/basic_operations.py
+   python3 src/create_database.py
+   ```
+   
+   Expected output:
+   ```
+   Database created successfully at: /path/to/database/mydb_v1.sqlite
+   Table 'employee' created with columns: id, name, email, designation
    ```
 
-3. **Expected Output:**
+3. **Insert data and query records:**
+   ```bash
+   python src/insert_data.py
    ```
-   [(1, 'John Doe', 'john@example.com', 'CEO'), (2, 'Jane Smith', 'jane@example.com', 'CTO')]
+   
+   Or:
+   ```bash
+   python3 src/insert_data.py
+   ```
+   
+   Expected output:
+   ```
+   Employee records:
+   ------------------------------------------------------------
+   ID: 1, Name: John Doe, Email: john@example.com, Designation: CEO
+   ID: 2, Name: Jane Smith, Email: jane@example.com, Designation: CTO
    ```
 
 ## Database Files
@@ -59,11 +82,15 @@ This project demonstrates SQLite database concepts through multiple example file
 
 To add a new concept file:
 1. Create a new Python file in the `src/` folder with a descriptive name (e.g., `transactions.py`, `joins.py`, `indexes.py`)
-2. Use the same database path pattern:
+2. Import the database utility helper:
    ```python
-   import os
-   project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-   db_path = os.path.join(project_root, "database", "your_db_name.sqlite")
+   from db_utils import get_db_path
+   db_path = get_db_path("your_db_name.sqlite")
+   ```
+   Or use a custom database name:
+   ```python
+   from db_utils import get_db_path
+   db_path = get_db_path("custom_database.sqlite")
    ```
 3. Run it with: `python src/your_concept_file.py`
 
