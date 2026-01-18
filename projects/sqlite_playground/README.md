@@ -1,6 +1,6 @@
 # SQLite Playground
 
-A simple Python project demonstrating SQLite database operations.
+A Python project exploring various SQLite database concepts through concept-driven examples.
 
 ## Prerequisites
 
@@ -11,17 +11,21 @@ A simple Python project demonstrating SQLite database operations.
 
 ```
 sqlite_playground/
-├── main.py          # Main script with SQLite operations
-└── README.md        # This file
+├── src/                    # Python concept files
+│   └── basic_operations.py # Basic CRUD operations example
+├── database/               # SQLite database files
+│   └── mydb_v1.sqlite     # Database file (created automatically)
+└── README.md              # This file
 ```
 
 ## What This Project Does
 
-This project demonstrates basic SQLite database operations:
-- Creates a database file (`mydb_v1.sqlite`)
-- Creates an `employee` table with columns: `id`, `name`, `email`, and `designation`
-- Inserts sample employee data
-- Queries and displays all employee records
+This project demonstrates SQLite database concepts through multiple example files:
+- **basic_operations.py**: Demonstrates basic CRUD operations
+  - Creates a database file (`mydb_v1.sqlite`)
+  - Creates an `employee` table with columns: `id`, `name`, `email`, and `designation`
+  - Inserts sample employee data
+  - Queries and displays all employee records
 
 ## Steps to Run
 
@@ -30,14 +34,14 @@ This project demonstrates basic SQLite database operations:
    cd /Users/saurabhverma/DevBox/python/projects/sqlite_playground
    ```
 
-2. **Run the script:**
+2. **Run a concept file:**
    ```bash
-   python main.py
+   python src/basic_operations.py
    ```
 
    Or if you're using Python 3 specifically:
    ```bash
-   python3 main.py
+   python3 src/basic_operations.py
    ```
 
 3. **Expected Output:**
@@ -45,14 +49,26 @@ This project demonstrates basic SQLite database operations:
    [(1, 'John Doe', 'john@example.com', 'CEO'), (2, 'Jane Smith', 'jane@example.com', 'CTO')]
    ```
 
-## Database File
+## Database Files
 
-- The script creates a SQLite database file named `mydb_v1.sqlite` in the same directory as `main.py`
-- The database file will be created automatically on first run
-- Subsequent runs will use the existing database and won't duplicate data (thanks to `INSERT OR IGNORE`)
+- All database files are stored in the `database/` folder
+- Database files are created automatically when scripts are run
+- The `database/` folder keeps all database files organized and separate from source code
+
+## Adding New Concepts
+
+To add a new concept file:
+1. Create a new Python file in the `src/` folder with a descriptive name (e.g., `transactions.py`, `joins.py`, `indexes.py`)
+2. Use the same database path pattern:
+   ```python
+   import os
+   project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+   db_path = os.path.join(project_root, "database", "your_db_name.sqlite")
+   ```
+3. Run it with: `python src/your_concept_file.py`
 
 ## Notes
 
-- The script uses `CREATE TABLE IF NOT EXISTS`, so it's safe to run multiple times
-- The script uses `INSERT OR IGNORE` to prevent duplicate entries
-- You can modify `main.py` to add more operations or change the database schema
+- Scripts use `CREATE TABLE IF NOT EXISTS`, so they're safe to run multiple times
+- Scripts use `INSERT OR IGNORE` to prevent duplicate entries
+- Each concept file can explore different database concepts independently

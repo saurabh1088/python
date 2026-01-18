@@ -1,6 +1,11 @@
 import sqlite3
+import os
 
-conn = sqlite3.connect("mydb_v1.sqlite")
+# Get the project root directory (parent of src/)
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+db_path = os.path.join(project_root, "database", "mydb_v1.sqlite")
+
+conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
 # Create the users table if it doesn't exist
@@ -25,4 +30,3 @@ cursor.execute("SELECT * FROM employee")
 print(cursor.fetchall())
 
 conn.close()
-
