@@ -26,11 +26,13 @@ logging.basicConfig(
 )
 
 def main():
+    logging.info('\n\n')
     logging.info('Arrived at entry point for expense tracker app')
     expenseTracker = expense.Expense(databaseFileName='expenses.json')
     expenseTracker.load_expenses_from_json_database()
 
     while True:
+        logging.info('\n\n')
         print('***********************************************************')
         print('Welcome to Expense tracker')
         print("\nExpense Tracker Options:")

@@ -29,8 +29,9 @@ class Expense:
             logging.info('Found file expenses.json')
             with open(self.databaseFileName, 'r') as file:
                 self.expenses = json.load(file)
+                pretty_json = json.dumps(self.expenses, indent=2)
                 logging.info('Successfully read contents for expenses.json')
-                logging.info(f'{self.expenses}')
+                logging.info(f'{pretty_json}')
         else:
             logging.error('Not able to find file expenses.json')
             self.expenses = []

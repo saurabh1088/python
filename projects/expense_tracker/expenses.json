@@ -19,5 +19,12 @@
         "amount": "367.89",
         "date": "10/28/2024, 19:14:37",
         "description": "Commute back to home from office."
+    },
+    {
+        "id": "fe4c8646-fc62-11f0-8bd0-b25786dc71c6",
+        "type": "Personal",
+        "amount": "200",
+        "date": "01/28/2026, 21:34:15",
+        "description": "For some personal stuff"
     }
 ]
