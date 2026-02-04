@@ -6,6 +6,7 @@ class Perceptron:
         self.weights = np.random.randn(input_size)
         self.bias = 0
         self.lr = learning_rate
+        print(f"Initialized weights: {self.weights}, bias: {self.bias}")
 
     def activation(self, x):
         # The Step Function (Binary output)
@@ -35,7 +36,9 @@ if __name__ == "__main__":
     perceptron = Perceptron(input_size=2)
     perceptron.train(inputs, labels)
 
+    print("Trained weights:", perceptron.weights)
+    print("Trained bias:", perceptron.bias)
+
     # Predict
     print(f"Prediction for [1, 1]: {perceptron.predict(np.array([1, 1]))}") # Should be 1
     print(f"Prediction for [0, 1]: {perceptron.predict(np.array([0, 1]))}") # Should be 0
-    
