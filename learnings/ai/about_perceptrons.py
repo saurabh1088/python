@@ -27,8 +27,8 @@ class Perceptron:
                 self.weights += self.lr * error * inputs
                 self.bias += self.lr * error
 
+#--------------------------------------------------------------------------
 # --- Testing the Perceptron ---
-# AND Gate Data
 if __name__ == "__main__":
     inputs = np.array([[0,0], [0,1], [1,0], [1,1]])
     labels = np.array([0, 0, 0, 1])
@@ -42,3 +42,6 @@ if __name__ == "__main__":
     # Predict
     print(f"Prediction for [1, 1]: {perceptron.predict(np.array([1, 1]))}") # Should be 1
     print(f"Prediction for [0, 1]: {perceptron.predict(np.array([0, 1]))}") # Should be 0
+    print(f"Prediction for [1, 0]: {perceptron.predict(np.array([1, 0]))}") # Should be 0
+    print(f"Prediction for [0, 0]: {perceptron.predict(np.array([0, 0]))}") # Should be 0
+
