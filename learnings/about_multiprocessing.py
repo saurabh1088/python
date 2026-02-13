@@ -1,0 +1,12 @@
+import multiprocessing
+
+def square(n):
+    print(f"Processing {n}")
+    return n * n
+
+if __name__ == "__main__":
+    with multiprocessing.Pool(processes=4) as pool:
+        results = pool.map(square, [1, 2, 3, 4, 5])
+
+    print(results)
+    
