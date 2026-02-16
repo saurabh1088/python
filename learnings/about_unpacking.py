@@ -36,3 +36,21 @@ def function(*args):
         print(arg)
 
 function(1, 2, 3, 4, 5, 6)  # Output: 1 2 3 4 5 6
+
+# Combining lists
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+combined = [*list1, *list2]
+print(combined)  # Output: [1, 2, 3, 4, 5, 6]
+
+# Unpacking with * to collect remaining items
+first, *middle, last = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(first)   # Output: 1
+print(middle)  # Output: [2, 3, 4, 5, 6, 7, 8, 9]
+print(last)    # Output: 10
+
+# Ignoring values during unpacking
+a, _, c = [1, 2, 3]
+print(a)  # Output: 1
+print(c)  # Output: 3
+
