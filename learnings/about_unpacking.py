@@ -23,3 +23,16 @@ print(first)  # Output: 10
 print(second) # Output: 20
 print(rest)   # Output: [30, 40, 50]
 
+# Unpacking with dictionaries
+my_dict = {'name': 'Bob', 'age': 25, 'city': 'New York'}
+name, age, city = my_dict.values()
+print(name)  # Output: Bob
+print(age)   # Output: 25
+print(city)  # Output: New York
+
+# Unpacking in function arguments
+def function(*args):
+    for arg in args:
+        print(arg)
+
+function(1, 2, 3, 4, 5, 6)  # Output: 1 2 3 4 5 6
