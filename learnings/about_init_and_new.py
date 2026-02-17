@@ -13,9 +13,6 @@ class Employee:
 
 
 class ImmutablePoint:
-    # TODO: Check if __slots__ is really necessary here for immutability, or if we can achieve immutability without it.
-    __slots__ = ('x', 'y')
-
     def __new__(cls, x, y):
         instance = super().__new__(cls)
         super().__setattr__(instance, 'x', x)
