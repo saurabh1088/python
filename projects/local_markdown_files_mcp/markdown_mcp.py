@@ -5,7 +5,7 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("MarkdownNotes")
 
 # Define the path to your notes
-NOTES_DIRECTORY = os.path.expanduser("~/Documents/MyNotes")
+NOTES_DIRECTORY = os.path.expanduser("~/DevBox/notes")
 
 @mcp.tool()
 def list_notes() -> list[str]:
@@ -30,4 +30,3 @@ def read_note(filename: str) -> str:
 
 if __name__ == "__main__":
     mcp.run()
-    
