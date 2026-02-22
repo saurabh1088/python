@@ -29,6 +29,8 @@ async def main():
             
             # In a full implementation, you'd use a LangChain Agent here
             # For now, let's manually call the read_note tool
+            # NOTE: Here relative_path should be the path to the note you want to read, adjust as necessary
+            # TODO: Implement a more dynamic way to determine which note to read based on user input
             response = await session.call_tool("read_note", arguments={"relative_path": "TheMatryoshkaDollModel.md"})
             print(f"Note contents: {response.content}")
 
