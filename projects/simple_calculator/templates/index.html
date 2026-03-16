@@ -24,10 +24,21 @@
             
             <select name="operation" required>
                 <option value="">Select operation</option>
-                <option value="+">➕ Addition</option>
-                <option value="-">➖ Subtraction</option>
-                <option value="*">✖ Multiplication</option>
-                <option value="/">➗ Division</option>
+                <option value="+" {% if selected_op=='+' %}selected{% endif %}>
+                    ➕ Addition
+                </option>
+                
+                <option value="-" {% if selected_op=='-' %}selected{% endif %}>
+                    ➖ Subtraction
+                </option>
+                
+                <option value="*" {% if selected_op=='*' %}selected{% endif %}>
+                    ✖ Multiplication
+                </option>
+                
+                <option value="/" {% if selected_op=='/' %}selected{% endif %}>
+                    ➗ Division
+                </option>
             </select><br>
             
             <button type="submit">Calculate</button>
