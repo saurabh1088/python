@@ -60,15 +60,83 @@ pip install -r requirements.txt
 
 ### 🏃 How to Run the Project
 
+To run a Flask project effectively, there are two primary methods depending on whether the user executes the internal script logic or utilizes the official Flask Command Line Interface (CLI). 
+
+
+The application can be started using either the Python interpreter or the Flask CLI. Before starting, it is necessary to ensure the virtual environment is active and the templates are organized. 
+
+#### **Option 1: Using the Flask CLI (Recommended for Development)**
+
+The `flask` command is the modern standard for running applications as it automatically handles the application context and provides clear status updates. 
+
+1. **Navigate to the project directory**:
+```bash
+cd /path/to/your/simple_calculator
+
+```
+
+
+2. **Activate the Virtual Environment**:
+* 
+**macOS/Linux**: `source venv/bin/activate` 
+
+
+* 
+**Windows**: `venv\Scripts\activate` 
+
+
+
+
+3. **Run the Application**:
+The `--app` flag is used to point to the main script (e.g., `app.py`). 
+
+
+```bash
+flask --app app run
+
+```
+
+
+*Note: Adding `--debug` to this command enables the interactive debugger and auto-reloader.*
+
+---
+
+#### **Option 2: Running the Script Directly**
+
+This method relies on the `if __name__ == '__main__':` block defined at the bottom of the `app.py` file. 
+
 1. **Prepare the Templates**:
-Ensure you have a folder named `templates` in your root directory containing your `index.html` file, as the application uses `render_template` to serve the UI.
-2. **Start the Flask Server**:
-Run the application script directly from your terminal:
+A folder named `templates` must exist in the root directory containing `index.html`, as `render_template` expects this specific structure. 
+
+
+2. **Start the Server**:
+The script is executed directly using the Python interpreter: 
+
+
 ```bash
 python app.py
 
 ```
 
+
+This triggers `app.run(debug=True)`, which provides helpful error messages and reloads the server automatically when code changes are saved. 
+
+
+
+---
+
+### 🔍 Architectural Note: Execution Choice
+
+* 
+**Option 1** is preferred when following the official Flask workflow or when additional CLI commands (such as database migrations) are required. 
+
+
+* 
+**Option 2** is suitable for quick testing or when the execution logic should remain entirely within the Python script itself. 
+
+
+
+Would the user like a demonstration of how to configure environment variables to allow for the use of `flask run` without the `--app` flag?
 
 3. **Access the Application**:
 Once the server starts, you will see an output indicating the local address (usually `http://127.0.0.1:5000`). Open this URL in your web browser.
