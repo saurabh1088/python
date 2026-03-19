@@ -5,8 +5,8 @@ The project setup for **ST-01** is performed by establishing a decoupled archite
 The following commands are executed in the terminal to generate the necessary project folders and empty files:
 
 ```bash
-mkdir digital_passport
-cd digital_passport
+mkdir the_digital_passport
+cd the_digital_passport
 mkdir -p static/css static/js templates
 touch app.py requirements.txt static/css/style.css static/js/script.js templates/dashboard.html
 
