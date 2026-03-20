@@ -6,7 +6,7 @@ To transition from requirements to execution, we will break the **Digital Passpo
 
 | Task ID | Status | Task Description | Technical Focus | Est. Time |
 | --- | --- | --- | --- | --- |
-| **ST-01** | ⬜ | **Environment & Scaffold** | Directory structure, `venv`, and Flask Init | 15m |
+| **ST-01** | ✅ | **Environment & Scaffold** | Directory structure, `venv`, and Flask Init | 15m |
 | **ST-02** | ⬜ | **Phase 1: The Entry Stamp** | Build "Check-in" form & set persistent `visitor_name` | 45m |
 | **ST-03** | ⬜ | **Phase 2: The Diplomatic Bag** | Setup `app.secret_key` and Session-based "Suitcase" | 60m |
 | **ST-04** | ⬜ | **Phase 3: Night Vision (JS)** | Create theme toggle via `document.cookie` in Vanilla JS | 45m |
