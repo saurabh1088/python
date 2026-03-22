@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, make_response, redirect, url_for
+from flask import Flask, render_template, request, make_response, redirect, url_for, session
 
 app = Flask(__name__)
 
@@ -17,8 +17,12 @@ def dashboard():
     # If the cookie doesn't exist, it defaults to None
     visitor_name = request.cookies.get('visitor_name')
     home_airport = request.cookies.get('home_airport')
+
+    # Retrieve the suitcase list from the session. 
+    # Default to an empty list if it doesn't exist.
+    suitcase = session.get('suitcase', [])
     
-    return render_template('dashboard.html', name=visitor_name, airport=home_airport)
+    return render_template('dashboard.html', name=visitor_name, airport=home_airport, suitcase=suitcase)
 
 @app.route('/check-in', methods=['POST'])
 def check_in():
@@ -38,6 +42,22 @@ def check_in():
     
     return response
 
+@app.route('/add-item', methods=['POST'])
+def add_item():
+    item = request.form.get('item')
+    
+    # Initialize the suitcase in the session if not present
+    if 'suitcase' not in session:
+        session['suitcase'] = []
+    
+    # Logic: To update a list in a session, it must be re-assigned
+    # so Flask notices the change.
+    current_suitcase = session['suitcase']
+    if item:
+        current_suitcase.append(item)
+        session['suitcase'] = current_suitcase
+    
+    return redirect(url_for('dashboard'))
 
 if __name__ == '__main__':
     # debug=True enables auto-reloading and helpful error messages.

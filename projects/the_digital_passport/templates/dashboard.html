@@ -26,6 +26,25 @@
             <p><strong>Home Base:</strong> {{ airport }}</p>
             <p><em>Your identity is currently stored in a 30-day persistent cookie.</em></p>
         </section>
+        <section class="passport-info">
+            <h2>Welcome Back, {{ name }}!</h2>
+            <p><strong>Home Base:</strong> {{ airport }}</p>
+            <hr>
+        
+            <h3>🧳 Your Virtual Suitcase</h3>
+            <ul>
+                {% for item in suitcase %}
+                <li>{{ item }}</li>
+                {% else %}
+                <li><em>Your suitcase is empty. Pack something!</em></li>
+                {% endfor %}
+            </ul>
+        
+            <form action="/add-item" method="POST">
+                <input type="text" name="item" placeholder="Add item (e.g. Camera)" required>
+                <button type="submit">Pack Item</button>
+            </form>
+        </section>
         {% endif %}
     </div>
 </body>
