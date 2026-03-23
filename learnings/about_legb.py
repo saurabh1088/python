@@ -24,7 +24,14 @@ def block_scope_example_using_for():
         FOR_BLOCK_VAR = "For Block Variable"
     print(FOR_BLOCK_VAR)
 
+def assignment_creates_local_scope():
+    # This will create a new local variable named GLOBAL, which will shadow the global variable GLOBAL.
+    GLOBAL = "Local Global"
+    print(GLOBAL)
+
 example_function()
 block_scope_example_using_if()
 block_scope_example_using_for()
+assignment_creates_local_scope()
+print(GLOBAL)
 
