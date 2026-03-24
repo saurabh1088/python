@@ -1,3 +1,7 @@
+# ST-04 : Night Vision (JS)
+
+---
+
 In **ST-04**, the project explores the **Client-Side** aspect of state management. While the previous tasks focused on the server (Python) setting the rules, this task demonstrates how **JavaScript** can independently read and write cookies to update the UI instantly without a page refresh.
 
 ### 🎭 The Goal: Night Vision (Dark Mode)
