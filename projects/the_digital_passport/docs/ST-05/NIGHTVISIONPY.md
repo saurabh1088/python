@@ -1,3 +1,7 @@
+# ST-05 : Night Vision (PY)
+
+---
+
 In **ST-05**, the goal is to eliminate the "Flash of Unstyled Content" (FOUC) by synchronizing the **Backend (Python)** with the **Frontend (JavaScript)** cookie.
 
 ### 1. The Problem: The "White Flash"
