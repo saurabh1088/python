@@ -21,8 +21,19 @@ def dashboard():
     # Retrieve the suitcase list from the session. 
     # Default to an empty list if it doesn't exist.
     suitcase = session.get('suitcase', [])
+
+    # ST-05: Read the theme cookie set by JavaScript
+    # We default to 'light' if the cookie doesn't exist
+    current_theme = request.cookies.get('theme', 'light')
     
-    return render_template('dashboard.html', name=visitor_name, airport=home_airport, suitcase=suitcase)
+    # Create a helper variable for the CSS class
+    theme_class = 'dark-mode' if current_theme == 'dark' else ''
+    
+    return render_template('dashboard.html', 
+                           name=visitor_name, 
+                           airport=home_airport, 
+                           suitcase=suitcase,
+                           theme_class=theme_class)
 
 @app.route('/check-in', methods=['POST'])
 def check_in():
