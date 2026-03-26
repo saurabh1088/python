@@ -70,6 +70,20 @@ def add_item():
     
     return redirect(url_for('dashboard'))
 
+@app.route('/get-vault-key')
+def get_vault_key():
+    response = make_response(redirect(url_for('dashboard')))
+    
+    # Setting a High-Security Cookie
+    # HttpOnly=True: Prevents JavaScript from accessing the cookie
+    # SameSite='Lax': Prevents the cookie from being sent on cross-site subrequests (CSRF protection)
+    response.set_cookie('vault_key', 'SECRET-PASS-789', 
+                        max_age=60*60, 
+                        httponly=True, 
+                        samesite='Lax')
+    
+    return response
+
 if __name__ == '__main__':
     # debug=True enables auto-reloading and helpful error messages.
     app.run(debug=True, port=5001) 

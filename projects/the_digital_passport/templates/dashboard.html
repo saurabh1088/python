@@ -45,6 +45,17 @@
                 <button type="submit">Pack Item</button>
             </form>
         </section>
+        <section class="security-vault">
+            <h3>🔐 Security Vault</h3>
+            <p>Status:
+                {% if request.cookies.get('vault_key') %}
+                <span style="color: green;">Key Secured in Browser</span>
+                {% else %}
+                <span style="color: red;">No Key Detected</span>
+                {% endif %}
+            </p>
+            <a href="/get-vault-key" class="btn">Request Vault Key</a>
+        </section>
         <button id="theme-toggle" class="btn-secondary">🌙 Toggle Night Vision</button>
         
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
