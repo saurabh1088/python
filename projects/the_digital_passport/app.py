@@ -84,6 +84,23 @@ def get_vault_key():
     
     return response
 
+@app.route('/reset-passport')
+def reset_passport():
+    # 1. Clear the Signed Session (Suitcase)
+    session.clear()
+    
+    # 2. Create the response to redirect home
+    response = make_response(redirect(url_for('dashboard')))
+    
+    # 3. Explicitly expire the Persistent Cookies
+    # Setting expires to 0 tells the browser the cookie is already dead
+    response.set_cookie('visitor_name', '', expires=0)
+    response.set_cookie('home_airport', '', expires=0)
+    response.set_cookie('theme', '', expires=0)
+    response.set_cookie('vault_key', '', expires=0)
+    
+    return response
+
 if __name__ == '__main__':
     # debug=True enables auto-reloading and helpful error messages.
     app.run(debug=True, port=5001) 
