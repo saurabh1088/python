@@ -1,6 +1,27 @@
 # Learnings
 
-## Plain Cookies
+---
+
+## 📘 Part 1: Lessons Learned (Architectural Review)
+
+This summary captures the high-level engineering takeaways from the "Digital Passport" lifecycle.
+
+### 1. The Persistence Trade-off
+The developer learned that **Persistent Cookies** (`max_age`) are ideal for non-sensitive UX (like a username or theme) because they survive browser restarts. However, they lack the security of **Session Cookies**, which live only in the browser's volatile memory.
+
+### 2. Integrity vs. Visibility
+A major breakthrough was the implementation of **Signed Sessions**. The project demonstrated that even if a user can *see* their "Suitcase" data in the browser, the server uses a `secret_key` to ensure they cannot *modify* it. This move from "client-side honesty" to "server-side validation" is the foundation of secure web apps.
+
+### 3. The Synchronization Bridge
+Through the "Night Vision" feature, it was observed that state is a shared responsibility. Using **Jinja2** to pre-render the CSS class based on a cookie set by **JavaScript** solved the "White Flash" (FOUC) problem, proving that full-stack synchronization is mandatory for a premium user experience.
+
+### 4. Defense in Depth
+The use of the `HttpOnly` flag proved that security is about layers. By isolating the `vault_key` from the JavaScript engine, the application was hardened against XSS attacks without losing the ability to identify the user at the server level.
+
+
+---
+
+## 📘 Part 2: Plain Cookies
 ```
 response.set_cookie('visitor_name', name, max_age=max_age)
 ```
