@@ -137,3 +137,33 @@ Plain cookies = client-controlled data → never trust blindly
 ```
 
 ---
+
+## 📘 Part 3: QnAs
+
+### 🎤 Technical Interview Prep: "The Digital Passport"
+
+#### **Q1: "How do you handle sensitive data in a stateless web application?"**
+**The Answer:** > "In the Digital Passport project, I implemented a **Defense in Depth** strategy. For non-sensitive UI preferences like 'Night Vision,' I used plain cookies accessible by JavaScript. However, for sensitive data like the 'Virtual Suitcase,' I utilized **Flask-signed sessions**. This ensures the data is cryptographically signed with a server-side `secret_key`. If a user attempts to tamper with the session string in their browser, the HMAC signature becomes invalid, and the server rejects the data, maintaining system integrity without a database."
+
+
+
+#### **Q2: "What is a 'Flash of Unstyled Content' (FOUC) and how did you solve it?"**
+**The Answer:** > "FOUC occurs when the browser renders the default CSS before the JavaScript can apply user preferences from a cookie. In my implementation, I moved the logic from 'Client-only' to 'Full-stack Sync.' Instead of waiting for JS to load, the **Python backend** reads the `theme` cookie during the initial request and injects the correct CSS class directly into the `<body>` tag via Jinja2. This ensures the page is 'pre-hydrated' with the correct theme before the first pixel is even rendered."
+
+
+
+#### **Q3: "Explain the difference between a Persistent Cookie and a Session Cookie."**
+**The Answer:** > "A **Session Cookie** is stored in the browser's RAM and is deleted when the tab or browser is closed; it’s the default behavior when no expiration is set. A **Persistent Cookie** uses the `max_age` or `expires` attribute to be saved to the user's disk. In this project, I used persistent cookies for the 'Traveler Identity' so that the application would recognize the user even if they returned weeks later, whereas I used session-based logic for temporary transactional data."
+
+
+
+#### **Q4: "How do you protect cookies from Cross-Site Scripting (XSS) attacks?"**
+**The Answer:** > "The primary defense I implemented was the **`HttpOnly` flag**. By setting this flag on the 'Vault Key' cookie, I instructed the browser to block all access to that cookie from the JavaScript `document.cookie` API. This ensures that even if a malicious script is successfully injected into the page, it cannot 'scrape' or steal the user's most sensitive credentials, as they are only visible to the server over HTTP headers."
+
+
+
+---
+
+### 🛡️ Final Portfolio Tip: The "Architect's Choice"
+When discussing this project, emphasize that the **ST-08 Telemetry UI** was added specifically for **Observability**. Mentioning that you build internal tools to monitor state changes shows that you prioritize debugging and system transparency—traits highly valued in software architects.
+
