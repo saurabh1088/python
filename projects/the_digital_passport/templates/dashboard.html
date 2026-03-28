@@ -62,7 +62,32 @@
         </section>
 
         <button id="theme-toggle" class="btn-secondary">🌙 Toggle Night Vision</button>
-        
+
+        <section class="dev-console">
+            <details>
+                <summary>🛠️ Developer Telemetry (Active Cookies)</summary>
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th>Cookie Name</th>
+                            <th>Security Type</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for cookie in active_cookies %}
+                        <tr>
+                            <td><code>{{ cookie.name }}</code></td>
+                            <td><span class="badge">{{ cookie.type }}</span></td>
+                            <td>✅ Active</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <p><small>Note: <code>vault_key</code> is visible here because the Server read it, but
+                        <code>document.cookie</code> in JS still cannot see it.</small></p>
+            </details>
+        </section>
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
         {% endif %}
     </div>

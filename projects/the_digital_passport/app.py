@@ -101,6 +101,23 @@ def reset_passport():
     
     return response
 
+@app.route('/')
+def dashboard():
+    # Gather all current cookie data
+    cookie_manifest = [
+        {"name": "visitor_name", "value": request.cookies.get('visitor_name'), "type": "Persistent"},
+        {"name": "theme", "value": request.cookies.get('theme'), "type": "JavaScript/Shared"},
+        {"name": "vault_key", "value": request.cookies.get('vault_key'), "type": "HttpOnly/Secure"},
+        {"name": "session", "value": "Encrypted String", "type": "Signed Session"}
+    ]
+    
+    # Filter out None values for the UI display
+    active_cookies = [c for c in cookie_manifest if c['value']]
+
+    return render_template('dashboard.html', 
+                           # ... previous variables ...
+                           active_cookies=active_cookies)
+
 if __name__ == '__main__':
     # debug=True enables auto-reloading and helpful error messages.
     app.run(debug=True, port=5001) 
