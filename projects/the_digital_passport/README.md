@@ -10,7 +10,7 @@ The Digital Passport is a travel-themed web app that replaces traditional databa
 - **Frontend:** HTML5, CSS Variables, Vanilla JavaScript
 - **Security:** HMAC-signed Sessions, HttpOnly/SameSite Cookie Flags
 
-## 🏗️ Architectural Milestones (The "ST" Series)
+## 🏗️ Architectural Milestones (The "ST" Series : Sub Tasks)
 - **ST-01/02:** Implementation of Persistent Identity using `max_age` cookies.
 - **ST-03:** Deployment of Signed Sessions to ensure data integrity for a "Virtual Suitcase."
 - **ST-04/05:** Full-stack synchronization of UI themes to eliminate Flash of Unstyled Content (FOUC).
